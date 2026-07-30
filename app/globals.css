@@ -1,26 +1,198 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ========================================
+   GLOBAL THEME
+======================================== */
+
+:root,
+html[data-theme="dark"] {
+  --page: #080808;
+  --surface: #111111;
+  --surface-soft: #171717;
+  --surface-hover: #151515;
+
+  --text: #f7f7f5;
+  --text-soft: rgba(255, 255, 255, 0.76);
+  --muted: rgba(255, 255, 255, 0.46);
+  --muted-light: rgba(255, 255, 255, 0.28);
+
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.24);
+
+  --button: #ededed;
+  --button-text: #080808;
+
+  --accent-card: #e7e5df;
+  --accent-card-text: #141414;
+  --accent-card-muted: rgba(20, 20, 20, 0.58);
+  --accent-card-soft: rgba(20, 20, 20, 0.34);
+  --accent-card-border: rgba(20, 20, 20, 0.12);
+
+  --glow: rgba(255, 255, 255, 0.035);
+
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html[data-theme="light"] {
+  --page: #f3f0e9;
+  --surface: #ffffff;
+  --surface-soft: #e9e5dd;
+  --surface-hover: #faf8f4;
+
+  --text: #171717;
+  --text-soft: rgba(23, 23, 23, 0.76);
+  --muted: rgba(23, 23, 23, 0.54);
+  --muted-light: rgba(23, 23, 23, 0.34);
+
+  --border: rgba(23, 23, 23, 0.12);
+  --border-strong: rgba(23, 23, 23, 0.28);
+
+  --button: #171717;
+  --button-text: #ffffff;
+
+  --accent-card: #222222;
+  --accent-card-text: #ffffff;
+  --accent-card-muted: rgba(255, 255, 255, 0.6);
+  --accent-card-soft: rgba(255, 255, 255, 0.36);
+  --accent-card-border: rgba(255, 255, 255, 0.14);
+
+  --glow: rgba(23, 23, 23, 0.045);
+
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--page);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--page);
+  color: var(--text);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background-color: var(--text);
+  color: var(--page);
+}
+
+/* ========================================
+   THEME TRANSITIONS
+======================================== */
+
+section,
+header,
+footer,
+article,
+button,
+a {
+  transition:
+    background-color 300ms ease,
+    border-color 300ms ease,
+    color 300ms ease;
+}
+
+/* ========================================
+   INFINITE DESIGN ROWS
+======================================== */
+
+.marquee-shell {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.marquee-left {
+  animation: marquee-left var(--marquee-duration, 60s) linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right var(--marquee-duration, 60s) linear infinite;
+}
+
+.marquee-shell:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body,
+  section,
+  header,
+  footer,
+  article,
+  button,
+  a {
+    transition: none;
+  }
+
+  .marquee-track {
+    animation: none;
+    transform: none;
+  }
 }
