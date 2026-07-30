@@ -4,7 +4,8 @@ export const projects: Project[] = [
   {
     index: "01",
     name: "Exquisite Properties",
-    category: "UI/UX Design · Front-end Development",
+    category:
+      "UI/UX Design · Front-end Development",
     year: "2026",
     label: "Live Case Study",
     description:
@@ -13,14 +14,20 @@ export const projects: Project[] = [
     imageAlt:
       "Exquisite Properties luxury real-estate website homepage",
     href: "/projects/exquisite-properties",
-    tools: ["Figma", "Next.js", "Tailwind CSS"],
+    tools: [
+      "Figma",
+      "Next.js",
+      "Tailwind CSS",
+    ],
     imageFit: "cover",
     imagePosition: "object-center",
+    glowColor: "#D2B576",
   },
   {
     index: "02",
     name: "Next Trip",
-    category: "Mobile UI/UX · Product Redesign",
+    category:
+      "Mobile UI/UX · Product Redesign",
     year: "2026",
     label: "UI/UX Case Study",
     description:
@@ -29,29 +36,43 @@ export const projects: Project[] = [
     imageAlt:
       "Next Trip mobile travel application case-study presentation",
     href: "/projects/next-trip",
-    tools: ["Figma", "UI/UX Design", "Prototype"],
+    tools: [
+      "Figma",
+      "UI/UX Design",
+      "Prototype",
+    ],
     imageFit: "cover",
     imagePosition: "object-center",
+    glowColor: "#5B72FF",
   },
   {
     index: "03",
     name: "EngliQuest",
-    category: "Mobile UI/UX · Capstone Project",
+    category:
+      "Mobile UI/UX · Capstone Project",
     year: "2026",
     label: "Capstone Case Study",
     description:
-      "A mobile English-learning application designed around assessment, structured lessons, reading comprehension, quizzes, and learner progress tracking.",
-    image: "/designs/mobile-city-guide.svg",
+      "A mobile English-learning application designed to support vocabulary, grammar, reading comprehension, translation, assessments, and learner progress.",
+    image:
+      "/projects/engliquest/EQMockup.png",
     imageAlt:
       "EngliQuest mobile English-learning application capstone project",
-    tools: ["Figma", "UX Research", "Prototype"],
+    href: "/projects/engliquest",
+    tools: [
+      "Figma",
+      "React Native",
+      "Capstone",
+    ],
     imageFit: "cover",
     imagePosition: "object-center",
+    glowColor: "#7C5CFF",
   },
   {
     index: "04",
     name: "Fashion Discovery",
-    category: "E-commerce UI/UX · Figma Concept",
+    category:
+      "E-commerce UI/UX · Figma Concept",
     year: "2025",
     label: "Figma Design",
     description:
@@ -59,8 +80,13 @@ export const projects: Project[] = [
     image: "/designs/mobile-fashion.svg",
     imageAlt:
       "Fashion Discovery mobile shopping application UI design",
-    tools: ["Figma", "E-commerce", "Prototype"],
+    tools: [
+      "Figma",
+      "E-commerce",
+      "Prototype",
+    ],
     imageFit: "cover",
     imagePosition: "object-center",
+    glowColor: "#D98FA7",
   },
 ];

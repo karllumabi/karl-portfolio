@@ -24,14 +24,7 @@ export default function CaseStudyPage({
         year={project.year}
       />
 
-      <CaseStudyHero
-        titleLines={project.titleLines}
-        tags={project.tags}
-        description={project.heroDescription}
-        image={project.heroImage}
-        imageAlt={project.heroImageAlt}
-        exploreLabel={project.exploreLabel}
-      />
+      <CaseStudyHero project={project} />
 
       <CaseStudyOverview
         details={project.details}

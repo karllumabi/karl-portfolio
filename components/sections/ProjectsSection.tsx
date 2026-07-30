@@ -5,7 +5,7 @@ import { projects } from "../../data/projects";
 import Container from "../layout/Container";
 import MotionReveal from "../motion/MotionReveal";
 import ArrowUpRight from "../ui/ArrowUpRight";
-import ProjectCard from "../ui/ProjectCard";
+import ProjectGlowGrid from "./ProjectGlowGrid";
 
 const featuredProjects = projects.slice(0, 2);
 
@@ -16,7 +16,6 @@ export default function ProjectsSection() {
       className="scroll-mt-6 bg-[var(--page)] pb-20 pt-6 sm:pb-28 sm:pt-10"
     >
       <Container>
-        {/* Section heading */}
         <MotionReveal duration={0.75} y={20}>
           <div className="mb-8 flex flex-col gap-6 border-b border-[var(--border)] pb-5 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -41,23 +40,10 @@ export default function ProjectsSection() {
           </div>
         </MotionReveal>
 
-        {/* Two featured projects */}
-        <div className="grid items-stretch gap-5 sm:gap-6 md:grid-cols-2">
-          {featuredProjects.map((project, index) => (
-            <MotionReveal
-              key={project.name}
-              className="h-full"
-              delay={index * 0.08}
-              duration={0.85}
-              y={30}
-              amount={0.1}
-            >
-              <ProjectCard project={project} />
-            </MotionReveal>
-          ))}
-        </div>
+        <ProjectGlowGrid
+          projects={featuredProjects}
+        />
 
-        {/* View all projects */}
         <MotionReveal
           className="mt-10 flex justify-center sm:mt-12"
           delay={0.15}
@@ -66,7 +52,7 @@ export default function ProjectsSection() {
         >
           <Link
             href="/projects"
-            className="group inline-flex items-center gap-5 rounded-full border border-[var(--border)] bg-[var(--surface)] px-7 py-4 text-sm font-medium text-[var(--text-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--border-strong)] hover:text-[var(--text)] sm:px-9 sm:py-5"
+            className="group inline-flex items-center gap-5 rounded-full border border-[var(--border)] bg-[var(--surface)] px-7 py-4 text-sm font-medium text-[var(--text-soft)] transition-all duration-300 hover:border-[var(--button)] hover:bg-[var(--button)] hover:text-[var(--button-text)] sm:px-9 sm:py-5"
           >
             View all projects
 

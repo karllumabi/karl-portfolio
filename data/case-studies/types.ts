@@ -83,6 +83,11 @@ export type CaseStudyCTA = {
   secondaryHref: string;
 };
 
+export type CaseStudyExternalLink = {
+  label: string;
+  href: string;
+};
+
 export type CaseStudyProject = {
   slug: string;
   projectNumber: string;
@@ -98,6 +103,8 @@ export type CaseStudyProject = {
   backHref?: string;
   backLabel?: string;
   exploreLabel?: string;
+
+  externalLink?: CaseStudyExternalLink;
 
   details: CaseStudyDetail[];
   overview: CaseStudyOverview;
