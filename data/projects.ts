@@ -53,20 +53,21 @@ export const projects: Project[] = [
     year: "2026",
     label: "Capstone Case Study",
     description:
-      "A mobile English-learning application designed to support vocabulary, grammar, reading comprehension, translation, assessments, and learner progress.",
+      "A gamified English-learning application combining interactive language activities, progressive difficulty, assessments, and AI-assisted personalization.",
     image:
       "/projects/engliquest/EQMockup.png",
     imageAlt:
-      "EngliQuest mobile English-learning application capstone project",
+      "EngliQuest gamified English-learning mobile application capstone project",
     href: "/projects/engliquest",
     tools: [
-      "Figma",
       "React Native",
-      "Capstone",
+      "Firebase",
+      "Python",
+      "Figma",
     ],
     imageFit: "cover",
     imagePosition: "object-center",
-    glowColor: "#7C5CFF",
+    glowColor: "#6866D9",
   },
   {
     index: "04",

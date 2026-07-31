@@ -5,7 +5,7 @@ import type { CaseStudyProject } from "./types";
 export const nextTripMetadata: Metadata = {
   title: "Next Trip — Karl Lumabi",
   description:
-    "A mobile UI/UX redesign case study for Next Trip, a travel-planning and expense-management application.",
+    "A mobile travel application created for a UI/UX Design subject and selected as one of the Top 10 Best Designs.",
 };
 
 export const nextTripProject: CaseStudyProject = {
@@ -25,18 +25,19 @@ export const nextTripProject: CaseStudyProject = {
 
   tags: [
     "Mobile UI/UX",
-    "Product Redesign",
+    "Academic Project",
+    "Top 10 Design",
     "Travel",
     "Figma",
   ],
 
   heroDescription:
-    "A mobile travel companion redesigned to bring itinerary planning, expense tracking, translation, and trip management into one clear experience.",
+    "A mobile travel application created for a UI/UX Design subject. The project combines itinerary planning, expense tracking, translation, and trip management in one organized experience and was selected as one of the Top 10 Best Designs.",
 
   heroImage: "/projects/next-trip/mockup.png",
 
   heroImageAlt:
-    "Next Trip mobile application presentation mockup",
+    "Next Trip mobile travel application UI/UX project presentation mockup",
 
   details: [
     {
@@ -45,15 +46,19 @@ export const nextTripProject: CaseStudyProject = {
     },
     {
       label: "Project",
-      value: "Mobile Application Redesign",
+      value: "UI/UX Design Subject Project",
+    },
+    {
+      label: "Recognition",
+      value: "Top 10 Best Designs",
     },
     {
       label: "Platform",
-      value: "iOS and Android",
+      value: "Mobile Application",
     },
     {
       label: "Tools",
-      value: "Figma, Prototyping",
+      value: "Figma, Auto Layout, Prototyping",
     },
     {
       label: "Year",
@@ -65,29 +70,29 @@ export const nextTripProject: CaseStudyProject = {
     eyebrow: "Project overview",
 
     title:
-      "Making every part of a trip easier to manage.",
+      "A complete travel companion designed for planning and managing every trip.",
 
     challenge: {
-      eyebrow: "The challenge",
+      eyebrow: "The project goal",
 
       title:
-        "Travel information was spread across too many disconnected tools.",
+        "Create one mobile experience that organizes essential travel activities.",
 
       paragraphs: [
-        "Travelers often move between calendar apps, notes, calculators, maps, and translation tools while planning and managing a trip.",
+        "Travelers often use separate applications for itineraries, expenses, translation, notes, and other important trip information.",
 
-        "The redesign needed to combine these essential tasks without making the interface feel crowded or difficult to understand.",
+        "The objective of the UI/UX Design subject project was to create a clear mobile experience that combines these tools without making the interface feel crowded or difficult to navigate.",
       ],
     },
 
     direction: {
-      eyebrow: "The direction",
+      eyebrow: "The design direction",
 
       title:
-        "One calm and organized travel companion.",
+        "A calm, organized, and practical mobile travel experience.",
 
       description:
-        "The new experience uses clearer hierarchy, simplified navigation, consistent cards, and focused task flows to help users plan without unnecessary friction.",
+        "Next Trip uses clear visual hierarchy, consistent cards, focused user flows, and simple navigation to help users prepare for a trip and manage important activities while traveling.",
     },
   },
 
@@ -98,10 +103,10 @@ export const nextTripProject: CaseStudyProject = {
       eyebrow: "Onboarding and access",
 
       title:
-        "Introducing the experience without overwhelming the user.",
+        "Introducing the application through a simple and focused onboarding flow.",
 
       description:
-        "The onboarding sequence explains the app's value through a simple story before guiding users into a focused login screen.",
+        "The onboarding screens communicate the main purpose of Next Trip before guiding users toward account access.",
 
       screens: [
         {
@@ -111,7 +116,7 @@ export const nextTripProject: CaseStudyProject = {
           title: "Discover",
 
           description:
-            "Introduces the app as a central place for organizing upcoming travel.",
+            "Introduces Next Trip as one organized place for preparing and managing upcoming travel.",
         },
         {
           image:
@@ -120,7 +125,7 @@ export const nextTripProject: CaseStudyProject = {
           title: "Plan",
 
           description:
-            "Communicates how users can organize activities and daily itineraries.",
+            "Shows how users can organize activities, destinations, and daily travel schedules.",
         },
         {
           image:
@@ -129,16 +134,15 @@ export const nextTripProject: CaseStudyProject = {
           title: "Travel",
 
           description:
-            "Highlights the tools available to support users during their trip.",
+            "Highlights the supporting tools available to users during their journey.",
         },
         {
-          image:
-            "/projects/next-trip/NTLogin.png",
+          image: "/projects/next-trip/NTLogin.png",
 
           title: "Login",
 
           description:
-            "A clean entry point with clear hierarchy and minimal distractions.",
+            "A clean and focused login screen provides a clear entry point into the application.",
         },
       ],
     },
@@ -146,13 +150,13 @@ export const nextTripProject: CaseStudyProject = {
     {
       id: "planning",
 
-      eyebrow: "Planning experience",
+      eyebrow: "Trip planning",
 
       title:
-        "From the trip overview to every individual activity.",
+        "From the complete trip overview to every individual activity.",
 
       description:
-        "Users can understand their schedule at a glance, review activity details, and add new plans without leaving the main travel flow.",
+        "The planning experience allows users to understand their trip at a glance, review daily activities, and add new plans through a consistent flow.",
 
       screens: [
         {
@@ -161,7 +165,7 @@ export const nextTripProject: CaseStudyProject = {
           title: "Trip overview",
 
           description:
-            "A central dashboard showing the current trip, important details, and daily spending.",
+            "The home screen presents the active trip, important details, upcoming activities, and daily spending.",
         },
         {
           image:
@@ -170,7 +174,7 @@ export const nextTripProject: CaseStudyProject = {
           title: "Daily itinerary",
 
           description:
-            "Activities are organized by day and time, making the travel schedule easier to scan.",
+            "Activities are arranged by day and time to make the travel schedule easier to scan.",
         },
         {
           image:
@@ -179,7 +183,7 @@ export const nextTripProject: CaseStudyProject = {
           title: "Activity details",
 
           description:
-            "Important location, time, notes, and activity information appear in one focused view.",
+            "Location, time, notes, and other important activity information are presented in one focused view.",
         },
         {
           image:
@@ -188,7 +192,7 @@ export const nextTripProject: CaseStudyProject = {
           title: "Add activity",
 
           description:
-            "A structured form reduces friction when adding new plans to the itinerary.",
+            "A structured form allows users to add activities without interrupting the main planning flow.",
         },
       ],
     },
@@ -199,10 +203,10 @@ export const nextTripProject: CaseStudyProject = {
       eyebrow: "Travel utilities",
 
       title:
-        "Useful tools remain accessible throughout the journey.",
+        "Supporting tools remain accessible throughout the journey.",
 
       description:
-        "Expenses, translation, and account preferences are organized as supporting tools instead of competing with the main itinerary.",
+        "Expense tracking, translation, and account settings are organized as supporting features alongside the main itinerary experience.",
 
       screens: [
         {
@@ -212,7 +216,7 @@ export const nextTripProject: CaseStudyProject = {
           title: "Expense tracking",
 
           description:
-            "Daily totals and spending categories help travelers understand where their money goes.",
+            "Daily totals and spending categories help travelers understand and monitor their expenses.",
         },
         {
           image:
@@ -221,7 +225,7 @@ export const nextTripProject: CaseStudyProject = {
           title: "Add expense",
 
           description:
-            "A focused expense-entry flow keeps financial tracking quick and manageable.",
+            "A focused expense-entry form makes recording travel purchases quick and manageable.",
         },
         {
           image:
@@ -230,7 +234,7 @@ export const nextTripProject: CaseStudyProject = {
           title: "Translation",
 
           description:
-            "An accessible translation tool supports communication while traveling.",
+            "A built-in translation tool supports communication and language assistance while traveling.",
         },
         {
           image:
@@ -239,7 +243,7 @@ export const nextTripProject: CaseStudyProject = {
           title: "Profile and settings",
 
           description:
-            "Account preferences and trip settings are organized in one familiar location.",
+            "Personal information, preferences, and trip settings are organized in one familiar location.",
         },
       ],
     },
@@ -248,28 +252,28 @@ export const nextTripProject: CaseStudyProject = {
   designProcess: {
     id: "design-process",
 
-    eyebrow: "Design process",
+    eyebrow: "Design process and system",
 
     title:
-      "Building a consistent and reusable mobile design system.",
+      "Created through a connected prototype and a consistent visual system.",
 
     description:
-      "The final interface was supported by a complete prototype flow, reusable color styles, and a structured layout grid created in Figma.",
+      "The project used prototype connections, reusable color styles, Auto Layout, mobile frame specifications, and layout grids to maintain consistency across the experience.",
 
     prototype: {
       image:
         "/projects/next-trip/NTPrototypeFlow.png",
 
       imageAlt:
-        "Next Trip Figma prototype flow",
+        "Next Trip mobile application interactive prototype connections in Figma",
 
-      eyebrow: "Prototype flow",
+      eyebrow: "Interactive prototype",
 
       title:
-        "Connecting every screen into one complete travel journey.",
+        "Connecting onboarding, planning, expenses, translation, and account management.",
 
       description:
-        "The interactive prototype demonstrates how users move from onboarding and login to trip planning, expense tracking, translation, and profile management.",
+        "The Figma prototype demonstrates how users move from onboarding and login to the trip dashboard, itinerary, travel utilities, and profile screens.",
     },
 
     cards: [
@@ -278,15 +282,14 @@ export const nextTripProject: CaseStudyProject = {
           "/projects/next-trip/NTColorStyles.png",
 
         imageAlt:
-          "Next Trip color styles created in Figma",
+          "Next Trip reusable interface color styles created in Figma",
 
-        eyebrow: "Color styles",
+        eyebrow: "Reusable styles",
 
-        title:
-          "A reusable visual language.",
+        title: "A consistent color system.",
 
         description:
-          "Primary, secondary, text, surface, and feedback colors were saved as reusable Figma styles to maintain consistency across every screen.",
+          "Brand, navigation, background, text, card, and interface colors were organized as reusable Figma styles.",
 
         layout: "narrow",
       },
@@ -295,15 +298,15 @@ export const nextTripProject: CaseStudyProject = {
           "/projects/next-trip/NTGridSystem.png",
 
         imageAlt:
-          "Next Trip mobile grid system created in Figma",
+          "Next Trip mobile layout grid and Auto Layout system in Figma",
 
-        eyebrow: "Grid system",
+        eyebrow: "Grid and Auto Layout",
 
         title:
-          "A structured mobile layout.",
+          "A consistent structure across every mobile screen.",
 
         description:
-          "Every screen was designed using a 430 × 932 mobile frame, consistent margins, spacing rules, Auto Layout, and reusable components.",
+          "A shared mobile frame, column grid, spacing system, and Auto Layout structure helped maintain alignment and consistency throughout the project.",
 
         layout: "wide",
       },
@@ -312,36 +315,36 @@ export const nextTripProject: CaseStudyProject = {
     specifications: [
       {
         label: "Frame",
-        value: "430 × 932 px",
+        value: "430 × 932",
       },
       {
         label: "Layout",
+        value: "12-column grid",
+      },
+      {
+        label: "Structure",
         value: "Auto Layout",
       },
       {
-        label: "Spacing",
-        value: "Consistent system",
-      },
-      {
-        label: "Styles",
-        value: "Reusable components",
+        label: "Recognition",
+        value: "Top 10 Best Designs",
       },
     ],
   },
 
   outcome: {
-    eyebrow: "The outcome",
+    eyebrow: "Project recognition",
 
     title:
-      "A clearer and more complete way to plan every trip.",
+      "Selected as one of the Top 10 Best Designs in the UI/UX Design subject.",
 
     description:
-      "The redesign brings essential travel tasks into one consistent system while preserving enough space and clarity for users to stay focused.",
+      "Next Trip presented a complete mobile travel experience supported by clear user flows, consistent interface patterns, reusable design styles, and an interactive Figma prototype.",
 
     items: [
-      "Simplified trip planning",
-      "Clear daily expense tracking",
-      "Consistent mobile interface",
+      "Top 10 Best Designs recognition",
+      "Complete mobile travel experience",
+      "Consistent UI system and prototype",
     ],
   },
 
@@ -360,6 +363,6 @@ export const nextTripProject: CaseStudyProject = {
 
     secondaryLabel: "View all projects",
 
-    secondaryHref: "/#projects",
+    secondaryHref: "/projects",
   },
 };

@@ -5,7 +5,7 @@ import type { CaseStudyProject } from "./types";
 export const engliQuestMetadata: Metadata = {
   title: "EngliQuest — Karl Lumabi",
   description:
-    "A mobile UI/UX and development capstone case study for EngliQuest, an English-learning application.",
+    "A gamified English-learning mobile application designed to support reading comprehension, vocabulary, grammar, sentence construction, translation, assessments, and personalized learning.",
 };
 
 export const engliQuestProject: CaseStudyProject = {
@@ -31,17 +31,18 @@ export const engliQuestProject: CaseStudyProject = {
   tags: [
     "Mobile UI/UX",
     "Capstone Project",
-    "Education",
-    "Mobile Development",
+    "Gamified Learning",
+    "React Native",
+    "AI Personalization",
   ],
 
   heroDescription:
-    "A mobile English-learning application designed and developed to combine vocabulary, grammar, reading comprehension, translation, assessments, and learner progress into one structured experience.",
+    "A gamified English-learning mobile application that combines interactive language activities, progressive difficulty, measurable assessments, and AI-assisted personalization into one structured learning experience.",
 
   heroImage: "/projects/engliquest/EQMockup.png",
 
   heroImageAlt:
-    "EngliQuest mobile English-learning application presentation mockup",
+    "EngliQuest gamified English-learning mobile application presentation mockup",
 
   details: [
     {
@@ -50,19 +51,19 @@ export const engliQuestProject: CaseStudyProject = {
     },
     {
       label: "Project",
-      value: "College Capstone Project",
+      value: "Academic Capstone Project",
     },
     {
-      label: "Industry",
-      value: "Education Technology",
+      label: "Users",
+      value: "Learners, Teachers, and Administrators",
     },
     {
       label: "Platform",
-      value: "Mobile Application",
+      value: "Cross-platform Mobile Application",
     },
     {
-      label: "Tools",
-      value: "Figma, React Native, Expo",
+      label: "Stack",
+      value: "React Native, Firebase, Python, Figma",
     },
     {
       label: "Year",
@@ -74,43 +75,43 @@ export const engliQuestProject: CaseStudyProject = {
     eyebrow: "Project overview",
 
     title:
-      "Making English practice more structured, accessible, and engaging.",
+      "Making English learning more interactive, personalized, and measurable.",
 
     challenge: {
-      eyebrow: "The capstone problem",
+      eyebrow: "The problem",
 
       title:
-        "English learners often rely on disconnected tools without a clear learning path.",
+        "Traditional English-learning activities often struggle to maintain learner engagement.",
 
       paragraphs: [
-        "Vocabulary, grammar, reading comprehension, translation, and assessment are often separated across different platforms, making it difficult for learners to maintain a consistent learning routine.",
+        "Learners need an accessible and interactive way to practice reading comprehension, vocabulary, grammar, sentence construction, and Filipino-English translation.",
 
-        "The capstone project needed to organize these activities into one mobile application while keeping each lesson approachable, focused, and easy to understand.",
+        "Many learning tools also lack personalized content, structured difficulty progression, and measurable assessment methods that clearly show whether a learner is improving.",
       ],
     },
 
     direction: {
-      eyebrow: "The direction",
+      eyebrow: "The solution",
 
       title:
-        "One guided learning experience for essential English skills.",
+        "A gamified mobile environment built around repeated practice and progression.",
 
       description:
-        "EngliQuest uses a clear dashboard, structured learning categories, focused activities, immediate feedback, and visible progress to help learners continue improving.",
+        "EngliQuest presents English-learning activities as short interactive challenges. It combines game mechanics, immediate feedback, progressive difficulty, learner interests, AI-assisted reading content, and pretest and post-test assessments.",
     },
   },
 
   screenSections: [
     {
-      id: "access-and-personalization",
+      id: "account-and-personalization",
 
-      eyebrow: "Access and personalization",
+      eyebrow: "Account and personalization",
 
       title:
-        "A clear starting point tailored to each learner.",
+        "A clear starting experience personalized around learner interests.",
 
       description:
-        "The login and registration experience collects the essential information needed to create a more personalized English-learning journey.",
+        "Learners create an account, provide essential information, and choose interests that can be used to generate more relevant reading materials.",
 
       screens: [
         {
@@ -119,15 +120,15 @@ export const engliQuestProject: CaseStudyProject = {
           title: "Login",
 
           description:
-            "A focused login screen provides a simple and familiar entry point for returning learners.",
+            "A simple login experience gives returning learners direct access to their account and learning progress.",
         },
         {
           image: "/projects/engliquest/EQRegistration.png",
 
-          title: "Registration",
+          title: "Account registration",
 
           description:
-            "Personal and account information is organized into clear and manageable input fields.",
+            "The registration flow organizes learner information into clear and manageable fields.",
         },
         {
           image:
@@ -136,21 +137,21 @@ export const engliQuestProject: CaseStudyProject = {
           title: "Interest selection",
 
           description:
-            "Learners select their interests to support more relevant topics and learning activities.",
+            "Learners select topics they are interested in to support more personalized reading content and activities.",
         },
       ],
     },
 
     {
-      id: "dashboard-and-progress",
+      id: "learning-environment",
 
-      eyebrow: "Dashboard and progress",
+      eyebrow: "Learning environment",
 
       title:
-        "Lessons, recommendations, and progress remain easy to understand.",
+        "One organized place for activities, progress, and account management.",
 
       description:
-        "The main experience gives learners quick access to learning modules, recommended activities, current progress, and account settings.",
+        "The main environment gives learners quick access to English-learning modes, current activities, performance information, and personal settings.",
 
       screens: [
         {
@@ -159,15 +160,15 @@ export const engliQuestProject: CaseStudyProject = {
           title: "Learning dashboard",
 
           description:
-            "The dashboard presents available learning categories, recommendations, and current activities in one organized view.",
+            "The dashboard presents available learning modes, recommendations, activities, and progression in one clear interface.",
         },
         {
           image: "/projects/engliquest/EQProgress.png",
 
-          title: "Progress tracking",
+          title: "Learning progress",
 
           description:
-            "Progress indicators help learners understand completed activities, scores, and skills that still need improvement.",
+            "Progress information helps learners understand completed activities, performance, and areas that need more practice.",
         },
         {
           image: "/projects/engliquest/EQSettings.png",
@@ -175,83 +176,68 @@ export const engliQuestProject: CaseStudyProject = {
           title: "Profile and settings",
 
           description:
-            "Account information, interests, achievements, preferences, and application settings are grouped into one familiar location.",
+            "Learner information, interests, preferences, achievements, and account actions are grouped in one familiar location.",
         },
       ],
     },
 
     {
-      id: "vocabulary-and-grammar",
+      id: "core-learning-modes",
 
-      eyebrow: "Vocabulary and grammar",
+      eyebrow: "Core learning modes",
 
       title:
-        "Focused practice for building stronger language foundations.",
+        "Interactive challenges targeting practical English skills.",
 
       description:
-        "Vocabulary and grammar modules use clear instructions, manageable questions, and immediate feedback to support continuous learning.",
+        "EngliQuest combines several language-learning modes so learners can practice comprehension, word knowledge, grammar, and translation without switching between different applications.",
 
       screens: [
         {
           image: "/projects/engliquest/EQVocabulary.png",
 
-          title: "Vocabulary lessons",
+          title: "Vocabulary building",
 
           description:
-            "Vocabulary activities help learners understand definitions, word usage, context, and correct answers.",
+            "Interactive activities help learners practice English words, definitions, meanings, context, and proper usage.",
         },
         {
           image: "/projects/engliquest/EQGrammar.png",
 
-          title: "Grammar exercises",
+          title: "Grammar practice",
 
           description:
-            "Grammar exercises present focused questions with clear answer states and explanations.",
+            "Grammar-focused questions help learners identify and apply correct grammatical structures.",
         },
-      ],
-    },
-
-    {
-      id: "reading-and-translation",
-
-      eyebrow: "Reading and translation",
-
-      title:
-        "Helping learners understand and apply English in context.",
-
-      description:
-        "Reading and translation activities allow learners to practice comprehension, interpretation, and practical language use.",
-
-      screens: [
         {
           image: "/projects/engliquest/EQReading.png",
 
           title: "Reading comprehension",
 
           description:
-            "Reading activities combine short passages, comprehension questions, and guided answer feedback.",
+            "Learners read passages and answer comprehension questions to evaluate their understanding of the text.",
         },
         {
           image: "/projects/engliquest/EQTranslation.png",
 
-          title: "Translation",
+          title: "Filipino-English translation",
 
           description:
-            "Translation exercises support language understanding through structured prompts and immediate results.",
+            "Translation activities allow learners to practice English and Filipino words, expressions, and equivalent meanings.",
         },
       ],
     },
 
     {
-      id: "assessment-and-feedback",
+      id: "assessment-and-progression",
 
-      eyebrow: "Assessment and feedback",
+      eyebrow: "Assessment and progression",
 
       title:
-        "Learning becomes measurable through quizzes and immediate results.",
+        "Feedback, difficulty levels, and assessments make improvement measurable.",
 
       description:
-        "Assessment activities allow learners to apply what they studied while clear feedback helps them understand mistakes and continue improving.",
+        "Activities are designed around repeated practice, challenge, progression, and feedback. Learners begin with easier content before unlocking medium and hard difficulty levels.",
 
       screens: [
         {
@@ -261,34 +247,65 @@ export const engliQuestProject: CaseStudyProject = {
           title: "Sentence construction",
 
           description:
-            "Learners organize words and build sentences through focused activities that reinforce grammar and proper word order.",
+            "Learners arrange and construct words into grammatically correct sentences while receiving immediate feedback.",
         },
         {
           image:
             "/projects/engliquest/EQComprehensionQuiz.png",
 
-          title: "Comprehension quiz",
+          title: "Comprehension assessment",
 
           description:
-            "Quiz questions measure understanding and provide a clear summary of the learner's performance.",
+            "Quiz activities evaluate understanding and support the pretest, learning activity, and post-test assessment structure.",
         },
       ],
     },
   ],
 
+  designProcess: {
+    id: "achievement-badge-system",
+
+    eyebrow: "Gamification system",
+
+    title:
+      "A manually designed badge system that rewards every stage of learner progression.",
+
+    description:
+      "The achievement system gives learners a visible reward for completing activities across vocabulary, grammar, reading comprehension, translation, and sentence construction.",
+
+    cards: [
+      {
+        image: "/projects/engliquest/EQBadges.png",
+
+        imageAlt:
+          "EngliQuest achievement badge progression for vocabulary, grammar, reading comprehension, translation, sentence construction, and ultimate completion",
+
+        eyebrow: "Achievement badge design",
+
+        title:
+          "Progress made visible across every learning mode.",
+
+        description:
+          "Each learning mode uses its own badge color and identity. Learners progress through Easy, Medium, and Hard achievements before earning a Champion badge. Completing all five learning modes rewards the final Ultimate Word Warrior achievement.",
+
+        layout: "wide",
+      },
+    ],
+  },
+
   outcome: {
     eyebrow: "Capstone outcome",
 
     title:
-      "A working mobile learning experience built around continuous improvement.",
+      "A connected learning system combining education, gamification, and personalization.",
 
     description:
-      "EngliQuest brings essential English-learning activities into one consistent mobile application while giving learners clear feedback, visible progress, and an easier way to continue practicing.",
+      "EngliQuest was developed as an academic and research-oriented mobile learning project. It connects the learner application, teacher-managed learning materials, and supporting backend and AI services into one system.",
 
     items: [
-      "Centralized English-learning modules",
-      "Clear learner progress tracking",
-      "Working mobile application",
+      "Gamified multi-skill English practice",
+      "Progressive difficulty and measurable assessments",
+      "AI-assisted personalization and managed learning content",
     ],
   },
 
@@ -302,8 +319,7 @@ export const engliQuestProject: CaseStudyProject = {
 
     primaryLabel: "Start a conversation",
 
-    primaryHref:
-      "mailto:karllumabi23@gmail.com",
+    primaryHref: "mailto:karllumabi23@gmail.com",
 
     secondaryLabel: "View all projects",
 
