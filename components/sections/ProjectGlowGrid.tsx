@@ -7,10 +7,10 @@ import {
   useState,
 } from "react";
 
-import type { Project } from "../ui/ProjectCard";
-
 import MotionReveal from "../motion/MotionReveal";
-import ProjectCard from "../ui/ProjectCard";
+import ProjectCard, {
+  type Project,
+} from "../ui/ProjectCard";
 
 type ProjectGlowGridProps = {
   projects: Project[];
@@ -27,55 +27,66 @@ export default function ProjectGlowGrid({
   projects,
 }: ProjectGlowGridProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const activeIndexRef = useRef(0);
-  const hoveredIndexRef = useRef<number | null>(null);
-  const visibilityRatiosRef = useRef<Record<number, number>>(
-    {},
-  );
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState<
-    number | null
-  >(null);
-  const [supportsHover, setSupportsHover] = useState(true);
+  const cardRefs = useRef<
+    (HTMLDivElement | null)[]
+  >([]);
+
+  const activeIndexRef = useRef(0);
+
+  const [activeIndex, setActiveIndex] =
+    useState(0);
+
+  const [isVisible, setIsVisible] =
+    useState(false);
 
   const [glowPosition, setGlowPosition] =
     useState<GlowPosition>({
       x: 0,
       y: 0,
-      width: 400,
-      height: 400,
+      width: 0,
+      height: 0,
     });
 
-  const positionGlow = useCallback((index: number) => {
-    const container = containerRef.current;
-    const card = cardRefs.current[index];
+  const positionGlow = useCallback(
+    (index: number) => {
+      const container = containerRef.current;
+      const card = cardRefs.current[index];
 
-    if (!container || !card) {
-      return;
-    }
+      if (!container || !card) {
+        return;
+      }
 
-    const containerRect =
-      container.getBoundingClientRect();
+      const containerRect =
+        container.getBoundingClientRect();
 
-    const cardRect = card.getBoundingClientRect();
+      const cardRect =
+        card.getBoundingClientRect();
 
-    setGlowPosition({
-      x:
-        cardRect.left -
-        containerRect.left +
-        cardRect.width / 2,
-      y:
-        cardRect.top -
-        containerRect.top +
-        cardRect.height / 2,
+      const glowPadding = 18;
 
-      // Keeps the glow close around the card
-      width: cardRect.width + 70,
-      height: cardRect.height + 70,
-    });
-  }, []);
+      setGlowPosition({
+        x:
+          cardRect.left -
+          containerRect.left -
+          glowPadding,
+
+        y:
+          cardRect.top -
+          containerRect.top -
+          glowPadding,
+
+        width:
+          cardRect.width +
+          glowPadding * 2,
+
+        height:
+          cardRect.height +
+          glowPadding * 2,
+      });
+    },
+    [],
+  );
 
   const activateProject = useCallback(
     (index: number) => {
@@ -89,68 +100,21 @@ export default function ProjectGlowGrid({
     [positionGlow],
   );
 
-  const getMostVisibleProject = useCallback(() => {
-    let highestRatio = 0;
-    let mostVisibleIndex = activeIndexRef.current;
-
-    Object.entries(visibilityRatiosRef.current).forEach(
-      ([index, ratio]) => {
-        if (ratio > highestRatio) {
-          highestRatio = ratio;
-          mostVisibleIndex = Number(index);
-        }
-      },
-    );
-
-    return mostVisibleIndex;
-  }, []);
-
   useEffect(() => {
-    const mediaQuery = window.matchMedia(
-      "(hover: hover) and (pointer: fine)",
-    );
+    const frame =
+      window.requestAnimationFrame(() => {
+        positionGlow(activeIndexRef.current);
+      });
 
-    const updateHoverSupport = () => {
-      setSupportsHover(mediaQuery.matches);
-    };
-
-    updateHoverSupport();
-
-    mediaQuery.addEventListener(
-      "change",
-      updateHoverSupport,
-    );
-
-    return () => {
-      mediaQuery.removeEventListener(
-        "change",
-        updateHoverSupport,
-      );
-    };
-  }, []);
-
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
-      positionGlow(activeIndexRef.current);
-    });
-
-    const delayedPosition = window.setTimeout(() => {
-      positionGlow(activeIndexRef.current);
-    }, 800);
-
-    return () => {
-      window.cancelAnimationFrame(frame);
-      window.clearTimeout(delayedPosition);
-    };
-  }, [positionGlow]);
-
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver(() => {
-      positionGlow(activeIndexRef.current);
-    });
+    const resizeObserver =
+      new ResizeObserver(() => {
+        positionGlow(activeIndexRef.current);
+      });
 
     if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
+      resizeObserver.observe(
+        containerRef.current,
+      );
     }
 
     cardRefs.current.forEach((card) => {
@@ -160,32 +124,57 @@ export default function ProjectGlowGrid({
     });
 
     return () => {
+      window.cancelAnimationFrame(frame);
       resizeObserver.disconnect();
     };
   }, [positionGlow, projects.length]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const card = entry.target as HTMLElement;
-          const index = Number(card.dataset.projectIndex);
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          const mostVisible = entries
+            .filter(
+              (entry) =>
+                entry.isIntersecting,
+            )
+            .sort(
+              (a, b) =>
+                b.intersectionRatio -
+                a.intersectionRatio,
+            )[0];
 
-          visibilityRatiosRef.current[index] =
-            entry.isIntersecting
-              ? entry.intersectionRatio
-              : 0;
-        });
+          if (!mostVisible) {
+            return;
+          }
 
-        if (hoveredIndexRef.current === null) {
-          activateProject(getMostVisibleProject());
-        }
-      },
-      {
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-        rootMargin: "-15% 0px -15% 0px",
-      },
-    );
+          const index = Number(
+            (
+              mostVisible.target as HTMLElement
+            ).dataset.projectIndex,
+          );
+
+          const cannotHover =
+            !window.matchMedia(
+              "(hover: hover) and (pointer: fine)",
+            ).matches;
+
+          if (cannotHover) {
+            activateProject(index);
+            setIsVisible(true);
+          }
+        },
+        {
+          threshold: [
+            0.25,
+            0.5,
+            0.75,
+            1,
+          ],
+          rootMargin:
+            "-12% 0px -12% 0px",
+        },
+      );
 
     cardRefs.current.forEach((card) => {
       if (card) {
@@ -196,91 +185,117 @@ export default function ProjectGlowGrid({
     return () => {
       observer.disconnect();
     };
-  }, [
-    activateProject,
-    getMostVisibleProject,
-    projects.length,
-  ]);
+  }, [activateProject]);
 
-  const handleMouseEnter = (index: number) => {
-    hoveredIndexRef.current = index;
-    setHoveredIndex(index);
-    activateProject(index);
-  };
-
-  const handleMouseLeave = () => {
-    hoveredIndexRef.current = null;
-    setHoveredIndex(null);
-    activateProject(getMostVisibleProject());
-  };
-
-  const activeProject = projects[activeIndex];
-
-  const glowColor =
-    activeProject?.glowColor ?? "#7C5CFF";
-
-  const showGlow =
-    hoveredIndex !== null || !supportsHover;
+  const activeColor =
+    projects[activeIndex]?.glowColor ??
+    "#5B72FF";
 
   return (
     <div
       ref={containerRef}
-      className="relative isolate -m-8 overflow-visible p-8"
-      onMouseLeave={handleMouseLeave}
+      className="relative isolate overflow-visible"
+      onMouseLeave={() =>
+        setIsVisible(false)
+      }
     >
-      {/* Compact glow around active card */}
+      {/* Soft outer glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-0 z-0 rounded-[40px] transition-[transform,width,height,opacity,background-color,box-shadow] duration-500 ease-out motion-reduce:transition-none"
+        className="pointer-events-none absolute left-0 top-0 z-0 rounded-[42px] transition-[transform,width,height,opacity,background,box-shadow] duration-500 ease-out motion-reduce:transition-none"
         style={{
           width: `${glowPosition.width}px`,
           height: `${glowPosition.height}px`,
-          opacity: showGlow ? 0.5 : 0,
-          backgroundColor: glowColor,
-          boxShadow: `0 0 50px 12px ${glowColor}`,
-          filter: "blur(28px)",
+
+          opacity: isVisible ? 0.62 : 0,
+
+          background: `linear-gradient(
+            135deg,
+            ${activeColor}70 0%,
+            ${activeColor}28 48%,
+            ${activeColor}65 100%
+          )`,
+
+          boxShadow: `
+            0 0 28px 8px ${activeColor}50,
+            0 0 55px 12px ${activeColor}28
+          `,
+
+          filter: "blur(13px)",
+
           transform: `translate3d(
-            ${glowPosition.x - glowPosition.width / 2}px,
-            ${glowPosition.y - glowPosition.height / 2}px,
+            ${glowPosition.x}px,
+            ${glowPosition.y}px,
+            0
+          )`,
+        }}
+      />
+
+      {/* Cleaner colored edge */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-0 top-0 z-[1] rounded-[38px] border transition-[transform,width,height,opacity,border-color] duration-500 ease-out motion-reduce:transition-none"
+        style={{
+          width: `${glowPosition.width}px`,
+          height: `${glowPosition.height}px`,
+
+          opacity: isVisible ? 0.65 : 0,
+
+          borderColor: `${activeColor}85`,
+
+          transform: `translate3d(
+            ${glowPosition.x}px,
+            ${glowPosition.y}px,
             0
           )`,
         }}
       />
 
       <div className="relative z-10 grid items-stretch gap-5 sm:gap-6 md:grid-cols-2">
-        {projects.map((project, index) => (
-          <MotionReveal
-            key={project.name}
-            className="h-full"
-            delay={index * 0.08}
-            duration={0.85}
-            y={30}
-            amount={0.1}
-          >
-            <div
-              ref={(element) => {
-                cardRefs.current[index] = element;
-              }}
-              data-project-index={index}
+        {projects.map(
+          (project, index) => (
+            <MotionReveal
+              key={project.name}
               className="h-full"
-              onMouseEnter={() =>
-                handleMouseEnter(index)
-              }
-              onFocus={() => handleMouseEnter(index)}
-              onBlur={(event) => {
-                if (
-                  !event.currentTarget.contains(
-                    event.relatedTarget as Node | null,
-                  )
-                ) {
-                  handleMouseLeave();
-                }
-              }}
+              delay={index * 0.08}
+              duration={0.85}
+              y={30}
+              amount={0.1}
             >
-              <ProjectCard project={project} />
-            </div>
-          </MotionReveal>
-        ))}
+              <div
+                ref={(element) => {
+                  cardRefs.current[index] =
+                    element;
+                }}
+                data-project-index={index}
+                className="h-full"
+                onMouseEnter={() => {
+                  activateProject(index);
+                  setIsVisible(true);
+                }}
+                onFocus={() => {
+                  activateProject(index);
+                  setIsVisible(true);
+                }}
+                onBlur={(event) => {
+                  if (
+                    !event.currentTarget.contains(
+                      event.relatedTarget as
+                        | Node
+                        | null,
+                    )
+                  ) {
+                    setIsVisible(false);
+                  }
+                }}
+              >
+                <ProjectCard
+                  project={project}
+                />
+              </div>
+            </MotionReveal>
+          ),
+        )}
       </div>
     </div>
   );

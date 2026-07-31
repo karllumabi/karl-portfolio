@@ -10,41 +10,73 @@ export const projects: Project[] = [
     label: "Live Case Study",
     description:
       "A responsive luxury real-estate experience designed to make property discovery clearer, more refined, and easier to navigate.",
-    image: "/projects/exquisite-homepage.svg",
+
+    image:
+      "/projects/exquisite-properties/mockup.png",
+
     imageAlt:
       "Exquisite Properties luxury real-estate website homepage",
+
     href: "/projects/exquisite-properties",
+
     tools: [
       "Figma",
       "Next.js",
       "Tailwind CSS",
     ],
+
     imageFit: "cover",
-    imagePosition: "object-center",
-    glowColor: "#D2B576",
+    imagePosition: "object-top",
+
+    glowColor: "#3B82F6",
+
+    coverVariant: "exquisite",
+
+    coverLogo:
+      "/projects/exquisite-properties/logo-white.png",
+
+    coverMockup:
+      "/projects/exquisite-properties/mockup.png",
   },
+
   {
     index: "02",
     name: "Next Trip",
     category:
-      "Mobile UI/UX · Product Redesign",
+      "Mobile UI/UX · Academic Project",
     year: "2026",
-    label: "UI/UX Case Study",
+    label: "Top 10 Design",
     description:
-      "A mobile travel companion redesigned to combine itinerary planning, expense tracking, translation, and trip management into one organized experience.",
-    image: "/projects/next-trip/mockup.png",
+      "A mobile travel application created for a UI/UX Design subject, combining itinerary planning, expense tracking, translation, and trip management. Selected as one of the Top 10 Best Designs.",
+
+    image:
+      "/projects/next-trip/NTHome.png",
+
     imageAlt:
-      "Next Trip mobile travel application case-study presentation",
+      "Next Trip mobile travel application displayed inside an iPhone mockup",
+
     href: "/projects/next-trip",
+
     tools: [
       "Figma",
       "UI/UX Design",
       "Prototype",
     ],
+
     imageFit: "cover",
-    imagePosition: "object-center",
-    glowColor: "#5B72FF",
+    imagePosition: "object-top",
+
+    glowColor: "#C5E384",
+
+    coverVariant: "nexttrip",
+
+    coverLogo:
+      "/projects/next-trip/NTLogo.png",
+
+    coverMockup:
+      "/projects/next-trip/NTHome.png",
   },
+
   {
     index: "03",
     name: "EngliQuest",
@@ -54,40 +86,33 @@ export const projects: Project[] = [
     label: "Capstone Case Study",
     description:
       "A gamified English-learning application combining interactive language activities, progressive difficulty, assessments, and AI-assisted personalization.",
+
     image:
-      "/projects/engliquest/EQMockup.png",
+      "/projects/engliquest/EQHome.png",
+
     imageAlt:
-      "EngliQuest gamified English-learning mobile application capstone project",
+      "EngliQuest mobile English-learning application displayed inside an iPhone mockup",
+
     href: "/projects/engliquest",
+
     tools: [
       "React Native",
       "Firebase",
       "Python",
       "Figma",
     ],
+
     imageFit: "cover",
-    imagePosition: "object-center",
+    imagePosition: "object-top",
+
     glowColor: "#6866D9",
-  },
-  {
-    index: "04",
-    name: "Fashion Discovery",
-    category:
-      "E-commerce UI/UX · Figma Concept",
-    year: "2025",
-    label: "Figma Design",
-    description:
-      "A clean fashion-shopping concept combining editorial visuals with a simple and focused product-discovery experience.",
-    image: "/designs/mobile-fashion.svg",
-    imageAlt:
-      "Fashion Discovery mobile shopping application UI design",
-    tools: [
-      "Figma",
-      "E-commerce",
-      "Prototype",
-    ],
-    imageFit: "cover",
-    imagePosition: "object-center",
-    glowColor: "#D98FA7",
+
+    coverVariant: "engliquest",
+
+    coverLogo:
+      "/projects/engliquest/EQLogo.png",
+
+    coverMockup:
+      "/projects/engliquest/EQHome.png",
   },
 ];
