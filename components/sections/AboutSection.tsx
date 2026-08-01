@@ -3,9 +3,12 @@ import Image from "next/image";
 import Container from "../layout/Container";
 import AnimatedHeading from "../motion/AnimatedHeading";
 import MotionReveal from "../motion/MotionReveal";
+import ArrowUpRight from "../ui/ArrowUpRight";
 import ExperienceItem, {
   type Experience,
 } from "../ui/ExperienceItem";
+
+const resumePath = "/files/Karl-Lumabi-Resume.pdf";
 
 const experiences: Experience[] = [
   {
@@ -32,14 +35,18 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="bg-[var(--page)] py-20 sm:py-28"
+      className="scroll-mt-20 bg-[var(--page)] py-20 sm:py-28"
     >
       <Container>
         <div className="grid gap-5 xl:grid-cols-12">
           {/* Portrait */}
           <div className="xl:col-span-7">
             <div className="xl:sticky xl:top-8">
-              <MotionReveal y={0} duration={1} amount={0.1}>
+              <MotionReveal
+                y={0}
+                duration={1}
+                amount={0.1}
+              >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] border border-[var(--border)] bg-[var(--surface-soft)] sm:rounded-[28px] xl:h-[calc(100svh-4rem)] xl:aspect-auto">
                   <Image
                     src="/images/karl-about.svg"
@@ -57,7 +64,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* About and Experience */}
+          {/* About and experience */}
           <div className="flex flex-col gap-5 xl:col-span-5">
             {/* About card */}
             <MotionReveal
@@ -80,19 +87,26 @@ export default function AboutSection() {
                     className="max-w-[430px] text-2xl font-normal leading-[1.25] tracking-[-0.025em] text-[var(--text)] sm:text-3xl lg:text-[34px]"
                   />
 
-                  <MotionReveal delay={0.15} y={18}>
+                  <MotionReveal
+                    delay={0.15}
+                    y={18}
+                  >
                     <p className="mt-8 max-w-[460px] font-mono text-sm leading-[1.9] tracking-wide text-[var(--muted)] sm:text-base">
-                      I create thoughtful digital experiences and visual
-                      identities that balance personality, usability, and
-                      business goals.
+                      I create thoughtful digital experiences and
+                      visual identities that balance personality,
+                      usability, and business goals.
                     </p>
                   </MotionReveal>
 
-                  <MotionReveal delay={0.25} y={18}>
+                  <MotionReveal
+                    delay={0.25}
+                    y={18}
+                  >
                     <p className="mt-5 max-w-[460px] font-mono text-sm leading-[1.9] tracking-wide text-[var(--muted)] sm:text-base">
-                      My work spans branding, UI/UX, graphic design, and
-                      front-end development, allowing me to create consistent
-                      experiences from the first idea to final execution.
+                      My work spans branding, UI/UX, graphic design,
+                      and front-end development, allowing me to create
+                      consistent experiences from the first idea to
+                      final execution.
                     </p>
                   </MotionReveal>
                 </div>
@@ -130,16 +144,21 @@ export default function AboutSection() {
                   ))}
                 </div>
 
-                <MotionReveal delay={0.2} y={15}>
+                {/* Opens the PDF directly */}
+                <MotionReveal
+                  delay={0.2}
+                  y={15}
+                >
                   <a
-                    href="/karl-lumabi-cv.pdf"
-                    download
-                    className="group inline-flex items-center gap-3 text-base tracking-wide text-[var(--text-soft)] transition-colors duration-300 hover:text-[var(--text)] sm:text-lg"
+                    href={resumePath}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-4 rounded-full bg-[var(--button)] px-7 py-4 text-sm font-medium text-[var(--button-text)] transition-transform duration-300 hover:-translate-y-1"
                   >
-                    Download CV
+                    View Resume
 
-                    <span className="transition-transform duration-300 group-hover:translate-y-1">
-                      ↓
+                    <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                      <ArrowUpRight className="h-4 w-4" />
                     </span>
                   </a>
                 </MotionReveal>
