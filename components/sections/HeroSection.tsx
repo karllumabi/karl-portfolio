@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import Container from "../layout/Container";
 import MotionReveal from "../motion/MotionReveal";
 import TypewriterHeading from "../motion/TypewriterHeading";
@@ -6,7 +8,10 @@ import ThemeToggle from "../theme/ThemeToggle";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="overflow-x-clip bg-[var(--page)]">
+    <section
+      id="home"
+      className="overflow-x-clip bg-[var(--page)]"
+    >
       <Container>
         {/* Header */}
         <header className="w-full py-5 sm:py-8">
@@ -20,10 +25,21 @@ export default function HeroSection() {
               className="min-w-0 flex-1"
             >
               <div className="flex min-w-0 items-center gap-3 sm:gap-4">
-                {/* Logo */}
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface-soft)] text-xs font-medium text-[var(--text)] sm:h-12 sm:w-12 sm:text-sm">
-                  KL
-                </div>
+                {/* Profile image */}
+                <a
+                  href="#home"
+                  aria-label="Go to homepage"
+                  className="group relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-[var(--border)] bg-[var(--surface-soft)] sm:h-12 sm:w-12"
+                >
+                  <Image
+                    src="/images/karl-about.png"
+                    alt="Karl Lumabi"
+                    fill
+                    priority
+                    sizes="48px"
+                    className="object-cover object-[center_15%] transition-transform duration-500 ease-out group-hover:scale-110"
+                  />
+                </a>
 
                 {/* Name and email */}
                 <div className="min-w-0">
@@ -65,7 +81,7 @@ export default function HeroSection() {
                 </div>
 
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/in/klumabi/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn profile"
@@ -104,8 +120,9 @@ export default function HeroSection() {
               y={20}
             >
               <p className="max-w-[610px] font-mono text-xs leading-[1.9] tracking-wide text-[var(--muted)] sm:text-base sm:leading-relaxed">
-                I inject personality into pixels, designing digital experiences
-                that connect and feel human. Based in the Philippines.
+                I inject personality into pixels, designing digital
+                experiences that connect and feel human. Based in the
+                Philippines.
               </p>
             </MotionReveal>
 
