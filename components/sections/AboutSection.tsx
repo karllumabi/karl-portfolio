@@ -9,6 +9,8 @@ import ExperienceItem, {
 } from "../ui/ExperienceItem";
 
 const resumePath = "/files/Karl-Lumabi-Resume.pdf";
+const defaultPortrait = "/images/karl-about.png";
+const hoverPortrait = "/images/karl-about-hover1.png";
 
 const experiences: Experience[] = [
   {
@@ -47,18 +49,29 @@ export default function AboutSection() {
                 duration={1}
                 amount={0.1}
               >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] border border-[var(--border)] bg-[var(--surface-soft)] sm:rounded-[28px] xl:h-[calc(100svh-4rem)] xl:aspect-auto">
+                <div className="group relative aspect-[4/5] overflow-hidden rounded-[22px] border border-[var(--border)] bg-[#0d0d0d] sm:aspect-[5/6] sm:rounded-[28px] xl:h-[calc(100svh-4rem)] xl:aspect-auto">
+                  {/* Default image */}
                   <Image
-                    src="/images/karl-about.svg"
+                    src={defaultPortrait}
                     alt="Portrait of Karl Lumabi"
                     fill
                     unoptimized
                     priority
-                    sizes="(min-width: 1280px) 58vw, 100vw"
-                    className="object-cover object-center transition-transform duration-[1400ms] hover:scale-[1.02]"
+                    sizes="(min-width: 1280px) 58vw, (min-width: 640px) 90vw, 100vw"
+                    className="object-cover object-top transition-all duration-700 ease-in-out group-hover:scale-[1.02] group-hover:opacity-0"
                   />
 
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5" />
+                  {/* Hover image */}
+                  <Image
+                    src={hoverPortrait}
+                    alt="Portrait of Karl Lumabi with alternate styling"
+                    fill
+                    unoptimized
+                    sizes="(min-width: 1280px) 58vw, (min-width: 640px) 90vw, 100vw"
+                    className="object-cover object-top opacity-0 transition-all duration-700 ease-in-out group-hover:scale-[1.02] group-hover:opacity-100"
+                  />
+
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-black/5" />
                 </div>
               </MotionReveal>
             </div>
@@ -144,7 +157,6 @@ export default function AboutSection() {
                   ))}
                 </div>
 
-                {/* Opens the PDF directly */}
                 <MotionReveal
                   delay={0.2}
                   y={15}
