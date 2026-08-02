@@ -14,7 +14,7 @@ import ExperienceItem, {
 const resumePath = "/files/Karl-Lumabi-Resume.pdf";
 
 const defaultPortrait = "/images/karl-about.png";
-const alternatePortrait = "/images/karl-about-hover.png";
+const alternatePortrait = "/images/karl-about-hover1.png";
 
 const experiences: Experience[] = [
   {
