@@ -30,12 +30,13 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
   ],
 
   heroDescription:
-    "A premium digital experience designed to present luxury real estate with clarity, confidence, and a more human approach to property discovery.",
+    "A premium digital experience designed to present high-value real estate with clarity, confidence, and a more personal approach to property discovery.",
 
-  heroImage: "/projects/exquisite-homepage.svg",
+  heroImage:
+    "/projects/exquisite-properties/exquisite-hero.png",
 
   heroImageAlt:
-    "Exquisite Properties luxury real-estate website homepage",
+    "Exquisite Properties PH homepage with property imagery, navigation, and search controls",
 
   browserDomain: "exquisitepropertiesph.vercel.app",
 
@@ -51,11 +52,12 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
     },
     {
       label: "Industry",
-      value: "Luxury Real Estate",
+      value: "Premium Real Estate",
     },
     {
       label: "Services",
-      value: "Strategy, UI/UX, Visual Design, Development",
+      value:
+        "Strategy, UI/UX, Visual Design, Development",
     },
     {
       label: "Year",
@@ -73,12 +75,12 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
       eyebrow: "The challenge",
 
       title:
-        "Create a luxury property website that feels premium without becoming complicated.",
+        "Create a premium property website that feels polished without becoming complicated.",
 
       paragraphs: [
-        "Real-estate websites often present visitors with too much information at once. This can make the experience feel crowded and transactional.",
+        "Real estate websites often present visitors with too much information at once. This can make the experience feel crowded, impersonal, and overly transactional.",
 
-        "The challenge was balancing property visuals, listing information, brand credibility, and accessible contact options in one coherent experience.",
+        "The challenge was balancing property imagery, listing information, brand credibility, and accessible contact options inside one clear and cohesive experience.",
       ],
     },
 
@@ -89,7 +91,7 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
         "Editorial design meets modern property discovery.",
 
       description:
-        "The final direction combines an elegant neutral palette, expressive typography, spacious layouts, and immersive property imagery.",
+        "The final direction combines a restrained palette, expressive typography, spacious layouts, focused calls to action, and immersive property imagery.",
     },
   },
 
@@ -109,7 +111,7 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
         title: "Premium without feeling distant",
 
         description:
-          "The interface uses generous spacing, strong typography, and restrained visual elements to create a luxury experience that still feels welcoming.",
+          "Generous spacing, strong typography, and restrained visual elements create a refined experience that still feels welcoming.",
       },
       {
         number: "02",
@@ -134,42 +136,45 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
     eyebrow: "Website showcase",
 
     title:
-      "A visual system made for high-value properties.",
+      "A refined digital experience for high-value properties.",
 
     description:
-      "Each visual demonstrates a different part of the browsing and inquiry experience.",
+      "Actual website screens demonstrate how the visual direction supports property discovery, brand storytelling, and broker inquiries.",
 
     browser: {
-      image: "/projects/exquisite-homepage.svg",
+      image:
+        "/projects/exquisite-properties/exquisite-hero.png",
 
       imageAlt:
-        "Exquisite Properties complete website homepage",
+        "Exquisite Properties PH homepage and property search experience",
 
       domain: "exquisitepropertiesph.vercel.app",
     },
 
     featured: {
-      image: "/projects/exquisite-homepage.svg",
+      image:
+        "/projects/exquisite-properties/exquisite-listing-cards.png",
 
       imageAlt:
-        "Exquisite Properties desktop website experience",
+        "Property listing cards on the Exquisite Properties PH website",
 
-      label: "Desktop experience",
+      label: "Property presentation",
 
       description:
-        "An immersive editorial homepage designed for luxury property discovery.",
+        "A consistent listing system that keeps property photography and essential information easy to understand.",
     },
 
     navigation: {
-      image: "/projects/exquisite-homepage.svg",
+      image:
+        "/projects/exquisite-properties/exquisite-property-search.png",
 
       imageAlt:
-        "Exquisite Properties website navigation",
+        "Property search controls on the Exquisite Properties PH website",
 
-      label: "Clear navigation",
+      label: "Property discovery",
 
       description:
-        "Simple pathways help visitors explore properties quickly.",
+        "Focused filters give visitors a clear starting point for browsing available properties.",
     },
 
     philosophy: {
@@ -178,6 +183,85 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
       statement:
         "Reduce visual noise. Increase confidence.",
     },
+
+    sections: [
+      {
+        id: "property-search",
+
+        eyebrow: "Property discovery",
+
+        title: "Making property search feel effortless.",
+
+        description: [
+          "The property search experience gives visitors a clear starting point without overwhelming them with too many decisions.",
+
+          "Location, transaction type, property type, and price controls are organized inside a focused interface that supports faster browsing while preserving the premium visual direction.",
+        ],
+
+        image:
+          "/projects/exquisite-properties/exquisite-property-search.png",
+
+        imageAlt:
+          "Property search interface on the Exquisite Properties PH website",
+      },
+      {
+        id: "listing-cards",
+
+        eyebrow: "Property presentation",
+
+        title: "A flexible system for every listing.",
+
+        description: [
+          "Property cards make the most important information easy to scan while allowing photography to remain the primary visual focus.",
+
+          "Consistent image proportions, typography, pricing, locations, and property details create a reusable structure for different types of listings.",
+        ],
+
+        image:
+          "/projects/exquisite-properties/exquisite-listing-cards.png",
+
+        imageAlt:
+          "Property listing cards from the Exquisite Properties PH website",
+      },
+      {
+        id: "about-exquisite",
+
+        eyebrow: "Brand story",
+
+        title: "Real estate, made personal.",
+
+        description: [
+          "The About experience moves beyond property listings and communicates how Exquisite Properties PH guides clients through important real estate decisions.",
+
+          "Large editorial typography, concise messaging, and generous spacing create a calmer and more personal expression of the brand.",
+        ],
+
+        image:
+          "/projects/exquisite-properties/exquisite-about-section.png",
+
+        imageAlt:
+          "About page of the Exquisite Properties PH website",
+      },
+      {
+        id: "final-call-to-action",
+
+        eyebrow: "Conversion",
+
+        title: "From browsing to conversation.",
+
+        description: [
+          "The final call to action provides a clear transition from exploring properties to contacting a broker.",
+
+          "A focused message, strong property imagery, and one direct action end the experience confidently without making it feel overly promotional.",
+        ],
+
+        image:
+          "/projects/exquisite-properties/exquisite-final-cta.png",
+
+        imageAlt:
+          "Final broker contact call-to-action on the Exquisite Properties PH website",
+      },
+    ],
   },
 
   process: {
@@ -201,7 +285,7 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
         title: "Information architecture",
 
         description:
-          "Organized property listings, brokerage information, services, and contact points into a clear website structure.",
+          "Organized property listings, search controls, brokerage information, services, and contact points into a clear website structure.",
       },
       {
         number: "03",
@@ -209,7 +293,7 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
         title: "Visual design",
 
         description:
-          "Created a polished interface with editorial typography, premium spacing, and property-focused visual storytelling.",
+          "Created a polished interface with editorial typography, premium spacing, restrained colors, and property-focused visual storytelling.",
       },
       {
         number: "04",
@@ -217,7 +301,7 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
         title: "Development",
 
         description:
-          "Translated the design into a responsive front-end experience optimized for desktop, tablet, and mobile screens.",
+          "Translated the design into responsive Next.js components optimized for desktop, tablet, and mobile experiences.",
       },
     ],
   },
@@ -229,7 +313,7 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
       "A confident digital home for the Exquisite brand.",
 
     description:
-      "The finished experience creates a clearer way to discover listings, strengthens the brokerage’s premium positioning, and provides direct paths to inquiries.",
+      "The finished experience creates a clearer way to discover listings, strengthens the brokerage’s premium positioning, and provides direct paths from browsing to inquiry.",
 
     items: [
       "Clearer property browsing",
@@ -248,8 +332,7 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
 
     primaryLabel: "Start a conversation",
 
-    primaryHref:
-      "mailto:karllumabi23@gmail.com",
+    primaryHref: "mailto:karllumabi23@gmail.com",
 
     secondaryLabel: "View all projects",
 

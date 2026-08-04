@@ -128,6 +128,15 @@ export type WebsiteCaseStudyProcessStep = {
   description: string;
 };
 
+export type WebsiteCaseStudyShowcaseSection = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description: string[];
+  image: string;
+  imageAlt: string;
+};
+
 export type WebsiteCaseStudyShowcase = {
   eyebrow: string;
   title: string;
@@ -157,6 +166,8 @@ export type WebsiteCaseStudyShowcase = {
     eyebrow: string;
     statement: string;
   };
+
+  sections?: WebsiteCaseStudyShowcaseSection[];
 };
 
 export type WebsiteCaseStudyProject = {

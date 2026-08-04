@@ -1,6 +1,9 @@
 import Image from "next/image";
 
-import type { WebsiteCaseStudyProject } from "../../data/case-studies/types";
+import type {
+  WebsiteCaseStudyProject,
+  WebsiteCaseStudyShowcaseSection,
+} from "../../data/case-studies/types";
 
 import Container from "../layout/Container";
 import MotionReveal from "../motion/MotionReveal";
@@ -19,6 +22,10 @@ type WebsiteCaseStudyPageProps = {
 export default function WebsiteCaseStudyPage({
   project,
 }: WebsiteCaseStudyPageProps) {
+  const hasDetailedShowcase = Boolean(
+    project.showcase.sections?.length,
+  );
+
   return (
     <main className="min-h-screen overflow-x-clip bg-[var(--page)] text-[var(--text)]">
       {/* Navigation */}
@@ -104,7 +111,8 @@ export default function WebsiteCaseStudyPage({
                     href="#case-study"
                     className="group inline-flex items-center gap-4 px-1 py-3 text-sm text-[var(--text-soft)] transition-colors duration-300 hover:text-[var(--text)]"
                   >
-                    {project.exploreLabel ?? "Explore the case study"}
+                    {project.exploreLabel ??
+                      "Explore the case study"}
 
                     <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                       <ArrowUpRight className="h-4 w-4" />
@@ -115,7 +123,7 @@ export default function WebsiteCaseStudyPage({
             </div>
           </div>
 
-          {/* Live website preview */}
+          {/* Live desktop website */}
           <MotionReveal
             trigger="load"
             delay={0.38}
@@ -214,7 +222,7 @@ export default function WebsiteCaseStudyPage({
             </div>
           </MotionReveal>
 
-          {/* Static browser showcase */}
+          {/* Static homepage screenshot */}
           <MotionReveal
             y={35}
             duration={1}
@@ -227,76 +235,24 @@ export default function WebsiteCaseStudyPage({
             />
           </MotionReveal>
 
-          <div className="mt-5 grid gap-5 lg:grid-cols-12">
-            {/* Desktop experience */}
-            <MotionReveal
-              className="lg:col-span-7"
-              y={30}
-              duration={0.9}
-            >
-              <div className="relative min-h-[420px] overflow-hidden rounded-[24px] border border-[var(--border)] bg-[var(--surface)] sm:min-h-[620px] sm:rounded-[30px]">
-                <Image
-                  src={project.showcase.featured.image}
-                  alt={project.showcase.featured.imageAlt}
-                  fill
-                  sizes="(min-width: 1024px) 58vw, 100vw"
-                  className="object-cover object-top"
-                />
-
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
-
-                <div className="absolute bottom-6 left-6 right-6">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/60">
-                    {project.showcase.featured.label}
-                  </p>
-
-                  <p className="mt-2 max-w-[460px] text-sm text-white/90 sm:text-base">
-                    {project.showcase.featured.description}
-                  </p>
-                </div>
-              </div>
-            </MotionReveal>
-
-            <div className="grid gap-5 lg:col-span-5">
-              {/* Navigation preview */}
-              <MotionReveal y={30} duration={0.9}>
-                <div className="relative min-h-[300px] overflow-hidden rounded-[24px] border border-[var(--border)] bg-[var(--surface)] sm:min-h-[380px] sm:rounded-[30px]">
-                  <Image
-                    src={project.showcase.navigation.image}
-                    alt={project.showcase.navigation.imageAlt}
-                    fill
-                    sizes="(min-width: 1024px) 42vw, 100vw"
-                    className="scale-[1.35] object-cover object-top"
+          {hasDetailedShowcase ? (
+            <div className="mt-24 space-y-24 sm:mt-32 sm:space-y-32">
+              {project.showcase.sections?.map(
+                (section, index) => (
+                  <DetailedShowcaseSection
+                    key={section.id}
+                    section={section}
+                    index={index}
+                    domain={
+                      project.showcase.browser.domain
+                    }
                   />
-
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/60">
-                      {project.showcase.navigation.label}
-                    </p>
-
-                    <p className="mt-2 text-sm text-white/90">
-                      {project.showcase.navigation.description}
-                    </p>
-                  </div>
-                </div>
-              </MotionReveal>
-
-              {/* Philosophy */}
-              <MotionReveal y={30} duration={0.9}>
-                <article className="flex min-h-[300px] flex-col justify-between rounded-[24px] border border-[var(--accent-card-border)] bg-[var(--accent-card)] p-7 text-[var(--accent-card-text)] sm:min-h-[380px] sm:rounded-[30px] sm:p-10">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-card-soft)]">
-                    {project.showcase.philosophy.eyebrow}
-                  </p>
-
-                  <p className="max-w-[450px] text-3xl leading-[1.12] tracking-[-0.04em] sm:text-4xl">
-                    {project.showcase.philosophy.statement}
-                  </p>
-                </article>
-              </MotionReveal>
+                ),
+              )}
             </div>
-          </div>
+          ) : (
+            <LegacyShowcase project={project} />
+          )}
         </Container>
       </section>
 
@@ -350,5 +306,164 @@ export default function WebsiteCaseStudyPage({
       {/* CTA */}
       <CaseStudyCTA cta={project.cta} />
     </main>
+  );
+}
+
+type DetailedShowcaseSectionProps = {
+  section: WebsiteCaseStudyShowcaseSection;
+  index: number;
+  domain: string;
+};
+
+function DetailedShowcaseSection({
+  section,
+  index,
+  domain,
+}: DetailedShowcaseSectionProps) {
+  const reverse = index % 2 !== 0;
+
+  return (
+    <article
+      id={section.id}
+      className="scroll-mt-16"
+    >
+      <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-8">
+        <div
+          className={[
+            "lg:col-span-4",
+            reverse
+              ? "lg:col-start-9 lg:row-start-1"
+              : "",
+          ].join(" ")}
+        >
+          <MotionReveal y={20} duration={0.8}>
+            <div className="flex items-center justify-between gap-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--muted-light)]">
+                {section.eyebrow}
+              </p>
+
+              <p className="font-mono text-[10px] tracking-[0.18em] text-[var(--muted-light)]">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+            </div>
+
+            <h3 className="mt-6 max-w-[520px] text-3xl font-normal leading-[1.05] tracking-[-0.04em] text-[var(--text)] sm:text-4xl lg:text-5xl">
+              {section.title}
+            </h3>
+          </MotionReveal>
+
+          <div className="mt-7 space-y-5">
+            {section.description.map(
+              (paragraph, paragraphIndex) => (
+                <MotionReveal
+                  key={`${section.id}-${paragraphIndex}`}
+                  delay={0.1 + paragraphIndex * 0.08}
+                  y={16}
+                  duration={0.75}
+                >
+                  <p className="font-mono text-sm leading-[1.9] text-[var(--muted)]">
+                    {paragraph}
+                  </p>
+                </MotionReveal>
+              ),
+            )}
+          </div>
+        </div>
+
+        <MotionReveal
+          y={30}
+          duration={0.9}
+          amount={0.08}
+          className={[
+            "lg:col-span-8",
+            reverse
+              ? "lg:col-start-1 lg:row-start-1"
+              : "",
+          ].join(" ")}
+        >
+          <BrowserFrame
+            image={section.image}
+            imageAlt={section.imageAlt}
+            domain={domain}
+          />
+        </MotionReveal>
+      </div>
+    </article>
+  );
+}
+
+function LegacyShowcase({
+  project,
+}: {
+  project: WebsiteCaseStudyProject;
+}) {
+  return (
+    <div className="mt-5 grid gap-5 lg:grid-cols-12">
+      <MotionReveal
+        className="lg:col-span-7"
+        y={30}
+        duration={0.9}
+      >
+        <div className="relative min-h-[420px] overflow-hidden rounded-[24px] border border-[var(--border)] bg-[var(--surface)] sm:min-h-[620px] sm:rounded-[30px]">
+          <Image
+            src={project.showcase.featured.image}
+            alt={project.showcase.featured.imageAlt}
+            fill
+            sizes="(min-width: 1024px) 58vw, 100vw"
+            className="object-cover object-top"
+          />
+
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+
+          <div className="absolute bottom-6 left-6 right-6">
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/60">
+              {project.showcase.featured.label}
+            </p>
+
+            <p className="mt-2 max-w-[460px] text-sm text-white/90 sm:text-base">
+              {project.showcase.featured.description}
+            </p>
+          </div>
+        </div>
+      </MotionReveal>
+
+      <div className="grid gap-5 lg:col-span-5">
+        <MotionReveal y={30} duration={0.9}>
+          <div className="relative min-h-[300px] overflow-hidden rounded-[24px] border border-[var(--border)] bg-[var(--surface)] sm:min-h-[380px] sm:rounded-[30px]">
+            <Image
+              src={project.showcase.navigation.image}
+              alt={project.showcase.navigation.imageAlt}
+              fill
+              sizes="(min-width: 1024px) 42vw, 100vw"
+              className="scale-[1.35] object-cover object-top"
+            />
+
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+            <div className="absolute bottom-6 left-6 right-6">
+              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/60">
+                {project.showcase.navigation.label}
+              </p>
+
+              <p className="mt-2 text-sm text-white/90">
+                {project.showcase.navigation.description}
+              </p>
+            </div>
+          </div>
+        </MotionReveal>
+
+        <MotionReveal y={30} duration={0.9}>
+          <article className="flex min-h-[300px] flex-col justify-between rounded-[24px] border border-[var(--accent-card-border)] bg-[var(--accent-card)] p-7 text-[var(--accent-card-text)] sm:min-h-[380px] sm:rounded-[30px] sm:p-10">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--accent-card-soft)]">
+              {project.showcase.philosophy.eyebrow}
+            </p>
+
+            <p className="max-w-[450px] text-3xl leading-[1.12] tracking-[-0.04em] sm:text-4xl">
+              {project.showcase.philosophy.statement}
+            </p>
+          </article>
+        </MotionReveal>
+      </div>
+    </div>
   );
 }
