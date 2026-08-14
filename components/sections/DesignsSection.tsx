@@ -62,6 +62,17 @@ const graphicDesigns: DesignItem[] = [
     format: "graphic",
     borderRadius: "14px",
   },
+
+  {
+    title: "Residential Design 01",
+    category: "Real Estate Graphic Design",
+    year: "2026",
+    image: "/designs/Residential design.png",
+    imageAlt: "Residential real estate social media graphic design",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
   {
     title: "One Rockwell Listing",
     category: "Real Estate Campaign",
@@ -71,6 +82,17 @@ const graphicDesigns: DesignItem[] = [
     format: "graphic",
     borderRadius: "14px",
   },
+
+  {
+    title: "Residential Design 02",
+    category: "Property Marketing",
+    year: "2026",
+    image: "/designs/Residential design3.png",
+    imageAlt: "Residential property marketing graphic design",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
   {
     title: "Exquisite Answers",
     category: "Social Media Design",
@@ -80,12 +102,53 @@ const graphicDesigns: DesignItem[] = [
     format: "graphic",
     borderRadius: "14px",
   },
+
+  {
+    title: "Residential Design 03",
+    category: "Real Estate Campaign",
+    year: "2026",
+    image: "/designs/Residential design1.png",
+    imageAlt: "Residential real estate campaign graphic",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Residential Design 04",
+    category: "Social Media Design",
+    year: "2026",
+    image: "/designs/Residential design5.png",
+    imageAlt: "Residential social media graphic design",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
   {
     title: "Contact Campaign",
     category: "Marketing Design",
     year: "2026",
     image: "/designs/exquisite-contact.svg",
     imageAlt: "Exquisite Properties contact graphic",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Residential Design 05",
+    category: "Property Marketing",
+    year: "2026",
+    image: "/designs/Residential design2.png",
+    imageAlt: "Residential property marketing visual",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Residential Design 06",
+    category: "Real Estate Graphic Design",
+    year: "2026",
+    image: "/designs/Residential design4.png",
+    imageAlt: "Residential real estate graphic design",
     format: "graphic",
     borderRadius: "14px",
   },
@@ -173,7 +236,7 @@ export default function DesignsSection() {
               <InfiniteDesignRow
                 designs={graphicDesigns}
                 direction="right"
-                duration={68}
+                duration={80}
               />
             </MotionReveal>
           </div>
