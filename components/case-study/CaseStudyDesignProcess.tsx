@@ -30,13 +30,15 @@ export default function CaseStudyDesignProcess({
         {designProcess.prototype ? (
           <MotionReveal className="mt-14" y={30} duration={0.9}>
             <article className="overflow-hidden rounded-[24px] border border-[var(--border)] bg-[var(--surface)] sm:rounded-[32px]">
-              <div className="relative aspect-[16/9] overflow-hidden border-b border-[var(--border)] bg-[var(--surface-soft)]">
+              <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--border)] bg-[var(--surface-soft)]">
                 <Image
                   src={designProcess.prototype.image}
                   alt={designProcess.prototype.imageAlt}
                   fill
                   sizes="100vw"
-                  className="object-contain p-3 sm:p-6"
+                  quality={100}
+                  unoptimized
+                  className="object-contain p-2 sm:p-4"
                 />
               </div>
 
@@ -60,7 +62,7 @@ export default function CaseStudyDesignProcess({
         ) : null}
 
         {designProcess.cards?.length ? (
-          <div className="mt-5 grid gap-5 lg:grid-cols-12">
+          <div className="mt-5 grid items-stretch gap-5 lg:grid-cols-12">
             {designProcess.cards.map((card, index) => {
               const isNarrow = card.layout === "narrow";
 
@@ -69,8 +71,8 @@ export default function CaseStudyDesignProcess({
                   key={`${card.title}-${index}`}
                   className={
                     isNarrow
-                      ? "h-full lg:col-span-4"
-                      : "h-full lg:col-span-8"
+                      ? "lg:col-span-4"
+                      : "lg:col-span-8"
                   }
                   delay={index * 0.08}
                   y={30}
@@ -80,8 +82,8 @@ export default function CaseStudyDesignProcess({
                     <div
                       className={
                         isNarrow
-                          ? "relative min-h-[520px] flex-1 overflow-hidden border-b border-[var(--border)] bg-[var(--surface-soft)] sm:min-h-[620px]"
-                          : "relative aspect-[16/10] overflow-hidden border-b border-[var(--border)] bg-[var(--surface-soft)]"
+                          ? "relative aspect-[5/6] overflow-hidden border-b border-[var(--border)] bg-[var(--surface-soft)]"
+                          : "relative aspect-[9/5] overflow-hidden border-b border-[var(--border)] bg-[var(--surface-soft)]"
                       }
                     >
                       <Image
@@ -93,6 +95,8 @@ export default function CaseStudyDesignProcess({
                             ? "(min-width: 1024px) 34vw, 100vw"
                             : "(min-width: 1024px) 66vw, 100vw"
                         }
+                        quality={100}
+                        unoptimized
                         className="object-contain p-5 sm:p-8"
                       />
                     </div>
@@ -101,7 +105,7 @@ export default function CaseStudyDesignProcess({
                       className={
                         isNarrow
                           ? "p-6 sm:p-8"
-                          : "grid flex-1 gap-8 p-6 sm:p-8 lg:grid-cols-2 lg:items-end"
+                          : "grid gap-8 p-6 sm:p-8 lg:grid-cols-2 lg:items-end"
                       }
                     >
                       <div>
@@ -128,30 +132,29 @@ export default function CaseStudyDesignProcess({
                 </MotionReveal>
               );
             })}
-          </div>
-        ) : null}
 
-        {designProcess.specifications?.length ? (
-          <div className="mt-5 grid overflow-hidden rounded-[22px] border border-[var(--border)] bg-[var(--surface)] sm:grid-cols-2 lg:grid-cols-4">
-            {designProcess.specifications.map((specification, index) => (
-              <MotionReveal
-                key={specification.label}
-                delay={index * 0.06}
-                y={15}
-                duration={0.65}
-              >
-                <div className="min-h-[150px] border-b border-r border-[var(--border)] p-6 sm:min-h-[170px] sm:p-8 lg:border-b-0">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[var(--muted-light)] sm:text-[10px]">
-                    {String(index + 1).padStart(2, "0")} /{" "}
-                    {specification.label}
-                  </p>
+            {designProcess.specifications?.length ? (
+              <div className="grid overflow-hidden rounded-[22px] border border-[var(--border)] bg-[var(--surface)] sm:grid-cols-2 lg:col-span-12 lg:row-start-2 lg:grid-cols-4">
+                {designProcess.specifications.map((specification, index) => (
+                  <MotionReveal
+                    key={specification.label}
+                    delay={index * 0.06}
+                    y={15}
+                    duration={0.65}
+                  >
+                    <div className="min-h-[150px] border-b border-r border-[var(--border)] p-6 sm:min-h-[170px] sm:p-8 lg:border-b-0">
+                      <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[var(--muted-light)] sm:text-[10px]">
+                        {String(index + 1).padStart(2, "0")} / {specification.label}
+                      </p>
 
-                  <p className="mt-8 text-xl leading-tight tracking-[-0.025em] text-[var(--text-soft)] sm:text-2xl">
-                    {specification.value}
-                  </p>
-                </div>
-              </MotionReveal>
-            ))}
+                      <p className="mt-8 text-xl leading-tight tracking-[-0.025em] text-[var(--text-soft)] sm:text-2xl">
+                        {specification.value}
+                      </p>
+                    </div>
+                  </MotionReveal>
+                ))}
+              </div>
+            ) : null}
           </div>
         ) : null}
       </Container>

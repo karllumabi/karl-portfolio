@@ -4,54 +4,6 @@ import MotionReveal from "../motion/MotionReveal";
 import type { DesignItem } from "../ui/DesignCard";
 import InfiniteDesignRow from "../ui/InfiniteDesignRow";
 
-const mobileDesigns: DesignItem[] = [
-  {
-    title: "Fashion Discovery",
-    category: "E-commerce UI/UX",
-    year: "2025",
-    image: "/designs/mobile-fashion.svg",
-    imageAlt: "Fashion shopping mobile application interface",
-    format: "mobile",
-    borderRadius: "28px",
-  },
-  {
-    title: "Travel Explorer",
-    category: "Travel App Design",
-    year: "2025",
-    image: "/designs/mobile-travel.svg",
-    imageAlt: "Travel exploration mobile application interface",
-    format: "mobile",
-    borderRadius: "24px",
-  },
-  {
-    title: "City Guide",
-    category: "Lifestyle UI/UX",
-    year: "2025",
-    image: "/designs/mobile-city-guide.svg",
-    imageAlt: "City guide mobile application interface",
-    format: "mobile",
-    borderRadius: "30px",
-  },
-  {
-    title: "Style Campaign",
-    category: "Fashion Experience",
-    year: "2025",
-    image: "/designs/mobile-style.svg",
-    imageAlt: "Fashion campaign mobile application interface",
-    format: "mobile",
-    borderRadius: "24px",
-  },
-  {
-    title: "Destination Details",
-    category: "Travel Interface",
-    year: "2025",
-    image: "/designs/mobile-destination.svg",
-    imageAlt: "Travel destination details mobile application interface",
-    format: "mobile",
-    borderRadius: "28px",
-  },
-];
-
 const graphicDesigns: DesignItem[] = [
   {
     title: "Exquisite Brand Introduction",
@@ -152,6 +104,313 @@ const graphicDesigns: DesignItem[] = [
     format: "graphic",
     borderRadius: "14px",
   },
+  {
+    title: "Graphic Design 19",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-19.png",
+    imageAlt: "Graphic design artwork 19",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 20",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-20.png",
+    imageAlt: "Graphic design artwork 20",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 21",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-21.png",
+    imageAlt: "Graphic design artwork 21",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 22",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-22.png",
+    imageAlt: "Graphic design artwork 22",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 23",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-23.png",
+    imageAlt: "Graphic design artwork 23",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 24",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-24.png",
+    imageAlt: "Graphic design artwork 24",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 25",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-25.png",
+    imageAlt: "Graphic design artwork 25",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 26",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-26.png",
+    imageAlt: "Graphic design artwork 26",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 27",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-27.png",
+    imageAlt: "Graphic design artwork 27",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 28",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-28.png",
+    imageAlt: "Graphic design artwork 28",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 29",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-29.png",
+    imageAlt: "Graphic design artwork 29",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 30",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-30.png",
+    imageAlt: "Graphic design artwork 30",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 31",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-31.png",
+    imageAlt: "Graphic design artwork 31",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 32",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-32.png",
+    imageAlt: "Graphic design artwork 32",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 33",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-33.png",
+    imageAlt: "Graphic design artwork 33",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 34",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-34.png",
+    imageAlt: "Graphic design artwork 34",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 35",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-35.png",
+    imageAlt: "Graphic design artwork 35",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 36",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-36.png",
+    imageAlt: "Graphic design artwork 36",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 37",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-37.png",
+    imageAlt: "Graphic design artwork 37",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 38",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-38.png",
+    imageAlt: "Graphic design artwork 38",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 39",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-39.png",
+    imageAlt: "Graphic design artwork 39",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 40",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-40.png",
+    imageAlt: "Graphic design artwork 40",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 41",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-41.png",
+    imageAlt: "Graphic design artwork 41",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 42",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-42.png",
+    imageAlt: "Graphic design artwork 42",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 43",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-43.png",
+    imageAlt: "Graphic design artwork 43",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+
+  {
+    title: "Graphic Design 44",
+    category: "Graphic Design",
+    year: "2026",
+    image: "/designs/graphics-44.png",
+    imageAlt: "Graphic design artwork 44",
+    format: "graphic",
+    borderRadius: "14px",
+  },
+];
+
+const mobileDesigns: DesignItem[] = [
+  {
+    title: "Next Trip",
+    category: "Mobile Travel App",
+    year: "2026",
+    image: "/designs/mobile-travel.svg",
+    imageAlt: "Next Trip mobile travel interface design",
+    format: "mobile",
+    borderRadius: "28px",
+  },
+  {
+    title: "City Guide",
+    category: "Mobile Product Design",
+    year: "2026",
+    image: "/designs/mobile-city-guide.svg",
+    imageAlt: "City guide mobile interface design",
+    format: "mobile",
+    borderRadius: "28px",
+  },
+  {
+    title: "Destination Planner",
+    category: "Mobile UX Design",
+    year: "2026",
+    image: "/designs/mobile-destination.svg",
+    imageAlt: "Destination planner mobile interface design",
+    format: "mobile",
+    borderRadius: "28px",
+  },
+  {
+    title: "Fashion Journal",
+    category: "Mobile Editorial Design",
+    year: "2026",
+    image: "/designs/mobile-fashion.svg",
+    imageAlt: "Fashion journal mobile interface design",
+    format: "mobile",
+    borderRadius: "28px",
+  },
+  {
+    title: "Style Guide",
+    category: "Mobile Interface Design",
+    year: "2026",
+    image: "/designs/mobile-style.svg",
+    imageAlt: "Style guide mobile interface design",
+    format: "mobile",
+    borderRadius: "28px",
+  },
 ];
 
 export default function DesignsSection() {
@@ -185,7 +444,7 @@ export default function DesignsSection() {
             </div>
           </MotionReveal>
 
-          <div className="mt-14 sm:mt-16">
+          <div className="mt-16 sm:mt-20">
             <MotionReveal y={20} duration={0.75} amount={0.15}>
               <div className="mx-5 mb-6 flex items-end justify-between border-b border-[var(--border)] pb-4 sm:mx-8 lg:mx-10">
                 <div>
@@ -194,12 +453,12 @@ export default function DesignsSection() {
                   </p>
 
                   <h3 className="mt-2 text-lg tracking-wide text-[var(--text-soft)]">
-                    UI/UX Design
+                    Mobile Interfaces
                   </h3>
                 </div>
 
                 <p className="hidden font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--muted-light)] sm:block">
-                  Mobile Interfaces
+                  UI/UX and Product Design
                 </p>
               </div>
             </MotionReveal>
@@ -208,7 +467,7 @@ export default function DesignsSection() {
               <InfiniteDesignRow
                 designs={mobileDesigns}
                 direction="left"
-                duration={62}
+                duration={72}
               />
             </MotionReveal>
           </div>

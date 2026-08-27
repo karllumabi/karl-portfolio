@@ -11,6 +11,7 @@ import ArrowUpRight from "../ui/ArrowUpRight";
 
 import BrowserFrame from "./BrowserFrame";
 import CaseStudyCTA from "./CaseStudyCTA";
+import CaseStudyDesignProcess from "./CaseStudyDesignProcess";
 import CaseStudyNavigation from "./CaseStudyNavigation";
 import CaseStudyOutcome from "./CaseStudyOutcome";
 import CaseStudyOverview from "./CaseStudyOverview";
@@ -135,7 +136,12 @@ export default function WebsiteCaseStudyPage({
               image={project.heroImage}
               imageAlt={project.heroImageAlt}
               domain={project.browserDomain}
-              liveUrl={project.liveSite.href}
+              liveUrl={
+                project.livePreview === false
+                  ? undefined
+                  : project.liveSite.href
+              }
+              openUrl={project.liveSite.href}
               priority
             />
           </MotionReveal>
@@ -255,6 +261,12 @@ export default function WebsiteCaseStudyPage({
           )}
         </Container>
       </section>
+
+      {project.designProcess ? (
+        <CaseStudyDesignProcess
+          designProcess={project.designProcess}
+        />
+      ) : null}
 
       {/* Process */}
       <section className="border-t border-[var(--border)] bg-[var(--page)] py-20 sm:py-28">
@@ -385,6 +397,11 @@ function DetailedShowcaseSection({
             image={section.image}
             imageAlt={section.imageAlt}
             domain={domain}
+            imageClassName={
+              section.id === "listing-cards"
+                ? "!block !h-auto !w-full !max-h-none !max-w-none object-contain"
+                : undefined
+            }
           />
         </MotionReveal>
       </div>

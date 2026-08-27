@@ -12,7 +12,7 @@ export const projects: Project[] = [
       "A responsive luxury real-estate experience designed to make property discovery clearer, more refined, and easier to navigate.",
 
     image:
-      "/projects/exquisite-properties/mockup.png",
+      "/projects/exquisite-properties/exquisite-background.png",
 
     imageAlt:
       "Exquisite Properties luxury real-estate website homepage",
@@ -36,7 +36,7 @@ export const projects: Project[] = [
       "/projects/exquisite-properties/logo-white.png",
 
     coverMockup:
-      "/projects/exquisite-properties/mockup.png",
+      "/projects/exquisite-properties/exquisite-background.png",
   },
 
   {
@@ -74,7 +74,7 @@ export const projects: Project[] = [
       "/projects/next-trip/NTLogo.png",
 
     coverMockup:
-      "/projects/next-trip/NTHome.png",
+      "/projects/next-trip/mockup.png",
   },
 
   {
@@ -113,6 +113,42 @@ export const projects: Project[] = [
       "/projects/engliquest/EQLogo.png",
 
     coverMockup:
-      "/projects/engliquest/EQHome.png",
+      "/projects/engliquest/EQMockup.png",
+  },
+
+  {
+    index: "04",
+    name: "Astral Dev Team",
+    category:
+      "Team Portfolio · Vibe-coded Website",
+    year: "2026",
+    label: "Self-initiated Project",
+    description:
+      "A collaborative portfolio I created with my partner, bringing our shared digital work, experiments, and creative direction into one team-focused experience.",
+
+    image:
+      "/projects/astral-dev-team/hero.png",
+
+    imageAlt:
+      "Astral Dev Team collaborative portfolio website preview",
+
+    href:
+      "/projects/astral-dev-team",
+
+    tools: [
+      "Vibe coding",
+      "Front-end",
+      "Collaboration",
+    ],
+
+    imageFit: "cover",
+    imagePosition: "object-center",
+
+    glowColor: "#A79BFF",
+
+    coverVariant: "astral",
+
+    coverMockup:
+      "/projects/astral-dev-team/hero.png",
   },
 ];

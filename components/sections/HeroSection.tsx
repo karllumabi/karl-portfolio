@@ -1,16 +1,24 @@
+"use client";
+
 import Image from "next/image";
+import { useRef } from "react";
 
 import Container from "../layout/Container";
+import HeroCursorTrail from "../motion/HeroCursorTrail";
 import MotionReveal from "../motion/MotionReveal";
 import TypewriterHeading from "../motion/TypewriterHeading";
 import TypingUnderscore from "../motion/TypingUnderscore";
 import ThemeToggle from "../theme/ThemeToggle";
 
 export default function HeroSection() {
+  const heroRef = useRef<HTMLElement>(null);
+  const heroContentRef = useRef<HTMLDivElement>(null);
+
   return (
     <section
+      ref={heroRef}
       id="home"
-      className="overflow-x-clip bg-[var(--page)]"
+      className="relative overflow-x-clip bg-[var(--page)]"
     >
       <Container>
         {/* Header */}
@@ -95,7 +103,12 @@ export default function HeroSection() {
         </header>
 
         {/* Hero content */}
-        <div className="flex min-h-[44svh] flex-col justify-end pb-10 pt-12 sm:min-h-[47svh] sm:pb-12 sm:pt-12 lg:min-h-[49svh] lg:pb-14 lg:pt-14">
+        <div
+          ref={heroContentRef}
+          className="relative flex min-h-[44svh] flex-col justify-end pb-10 pt-12 sm:min-h-[47svh] sm:pb-12 sm:pt-12 lg:min-h-[49svh] lg:pb-14 lg:pt-14"
+        >
+          <HeroCursorTrail containerRef={heroContentRef} />
+
           <MotionReveal
             trigger="load"
             delay={0.18}

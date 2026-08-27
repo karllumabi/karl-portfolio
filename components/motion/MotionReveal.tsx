@@ -10,6 +10,7 @@ type MotionRevealProps = {
   duration?: number;
   x?: number;
   y?: number;
+  fromScale?: number;
   amount?: number;
   trigger?: "load" | "view";
 };
@@ -21,6 +22,7 @@ export default function MotionReveal({
   duration = 0.75,
   x = 0,
   y = 28,
+  fromScale = 1,
   amount = 0.2,
   trigger = "view",
 }: MotionRevealProps) {
@@ -30,12 +32,14 @@ export default function MotionReveal({
     opacity: 0,
     x,
     y,
+    scale: fromScale,
   };
 
   const visible = {
     opacity: 1,
     x: 0,
     y: 0,
+    scale: 1,
   };
 
   const transition = {

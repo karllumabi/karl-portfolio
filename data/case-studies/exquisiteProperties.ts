@@ -33,7 +33,7 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
     "A premium digital experience designed to present high-value real estate with clarity, confidence, and a more personal approach to property discovery.",
 
   heroImage:
-    "/projects/exquisite-properties/exquisite-hero.png",
+    "/projects/exquisite-properties/exquisite-background.png",
 
   heroImageAlt:
     "Exquisite Properties PH homepage with property imagery, navigation, and search controls",
@@ -143,7 +143,7 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
 
     browser: {
       image:
-        "/projects/exquisite-properties/exquisite-hero.png",
+        "/projects/exquisite-properties/exquisite-background.png",
 
       imageAlt:
         "Exquisite Properties PH homepage and property search experience",
@@ -153,7 +153,7 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
 
     featured: {
       image:
-        "/projects/exquisite-properties/exquisite-listing-cards.png",
+        "/projects/exquisite-properties/exquisite-featured-properties.png",
 
       imageAlt:
         "Property listing cards on the Exquisite Properties PH website",
@@ -166,15 +166,15 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
 
     navigation: {
       image:
-        "/projects/exquisite-properties/exquisite-property-search.png",
+        "/projects/exquisite-properties/exquisite-featured-properties.png",
 
       imageAlt:
-        "Property search controls on the Exquisite Properties PH website",
+        "Featured property listings on the Exquisite Properties PH website",
 
-      label: "Property discovery",
+      label: "Featured properties",
 
       description:
-        "Focused filters give visitors a clear starting point for browsing available properties.",
+        "A flexible listing system keeps the property experience clear and easy to explore.",
     },
 
     philosophy: {
@@ -185,25 +185,6 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
     },
 
     sections: [
-      {
-        id: "property-search",
-
-        eyebrow: "Property discovery",
-
-        title: "Making property search feel effortless.",
-
-        description: [
-          "The property search experience gives visitors a clear starting point without overwhelming them with too many decisions.",
-
-          "Location, transaction type, property type, and price controls are organized inside a focused interface that supports faster browsing while preserving the premium visual direction.",
-        ],
-
-        image:
-          "/projects/exquisite-properties/exquisite-property-search.png",
-
-        imageAlt:
-          "Property search interface on the Exquisite Properties PH website",
-      },
       {
         id: "listing-cards",
 
@@ -218,48 +199,110 @@ export const exquisitePropertiesProject: WebsiteCaseStudyProject = {
         ],
 
         image:
-          "/projects/exquisite-properties/exquisite-listing-cards.png",
+          "/projects/exquisite-properties/exquisite-featured-properties.png",
 
         imageAlt:
           "Property listing cards from the Exquisite Properties PH website",
       },
       {
-        id: "about-exquisite",
+        id: "services-exquisite",
 
-        eyebrow: "Brand story",
+        eyebrow: "Services",
 
-        title: "Real estate, made personal.",
+        title: "Expertise that moves with the client.",
 
         description: [
-          "The About experience moves beyond property listings and communicates how Exquisite Properties PH guides clients through important real estate decisions.",
+          "The services experience positions Exquisite Properties PH as a thoughtful partner across buying, selling, leasing, and investment decisions.",
 
-          "Large editorial typography, concise messaging, and generous spacing create a calmer and more personal expression of the brand.",
+          "A focused editorial layout pairs a clear value proposition with a strong architectural image and concise service cues.",
         ],
 
         image:
-          "/projects/exquisite-properties/exquisite-about-section.png",
+          "/projects/exquisite-properties/exquisite-services-hero.png",
 
         imageAlt:
-          "About page of the Exquisite Properties PH website",
+          "Services hero design for the Exquisite Properties PH website",
+      },
+    ],
+  },
+
+  designProcess: {
+    id: "design-process",
+
+    eyebrow: "Figma design process",
+
+    title:
+      "Mapped as a connected experience before it was built.",
+
+    description:
+      "The Figma work brings the page structure, visual direction, and key user paths together so every section feels like part of one property journey.",
+
+    prototype: {
+      image:
+        "/projects/exquisite-properties/figma-prototype-flow-2x.png",
+
+      imageAlt:
+        "Exquisite Properties PH connected prototype flow in Figma",
+
+      eyebrow: "Prototype and page map",
+
+      title:
+        "Connecting every page into one property journey.",
+
+      description:
+        "The prototype board maps the navigation between the landing page, properties, services, and About flows before development.",
+    },
+
+    cards: [
+      {
+        image:
+          "/projects/exquisite-properties/figma-canvas-layout-2x.png",
+
+        imageAlt:
+          "Exquisite Properties PH page sections arranged on a Figma canvas",
+
+        eyebrow: "Section layout",
+
+        title: "A page system you can see at a glance.",
+
+        description:
+          "The Figma canvas shows the landing-page sections and supporting screen compositions arranged as one connected design system.",
+
+        layout: "wide",
       },
       {
-        id: "final-call-to-action",
-
-        eyebrow: "Conversion",
-
-        title: "From browsing to conversation.",
-
-        description: [
-          "The final call to action provides a clear transition from exploring properties to contacting a broker.",
-
-          "A focused message, strong property imagery, and one direct action end the experience confidently without making it feel overly promotional.",
-        ],
-
-        image:
-          "/projects/exquisite-properties/exquisite-final-cta.png",
+        image: "/projects/exquisite-properties/figma-layers-2x.png",
 
         imageAlt:
-          "Final broker contact call-to-action on the Exquisite Properties PH website",
+          "Exquisite Properties PH section layers organized in Figma",
+
+        eyebrow: "Layer structure",
+
+        title: "Organized for responsive implementation.",
+
+        description:
+          "Named sections, nested frames, and grouped components keep the design handoff clear and make the front-end structure easier to maintain.",
+
+        layout: "narrow",
+      },
+    ],
+
+    specifications: [
+      {
+        label: "Canvas",
+        value: "1920 px desktop",
+      },
+      {
+        label: "Structure",
+        value: "Landing + 4 page flows",
+      },
+      {
+        label: "System",
+        value: "Reusable sections",
+      },
+      {
+        label: "Prototype",
+        value: "Connected navigation",
       },
     ],
   },

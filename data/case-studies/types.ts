@@ -188,6 +188,8 @@ export type WebsiteCaseStudyProject = {
     href: string;
   };
 
+  livePreview?: boolean;
+
   backHref?: string;
   backLabel?: string;
   exploreLabel?: string;
@@ -203,6 +205,8 @@ export type WebsiteCaseStudyProject = {
   };
 
   showcase: WebsiteCaseStudyShowcase;
+
+  designProcess?: CaseStudyDesignProcess;
 
   process: {
     eyebrow: string;

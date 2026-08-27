@@ -8,7 +8,9 @@ type BrowserFrameProps = {
   imageAlt: string;
   domain: string;
   liveUrl?: string;
+  openUrl?: string;
   className?: string;
+  imageClassName?: string;
   priority?: boolean;
 };
 
@@ -20,7 +22,9 @@ export default function BrowserFrame({
   imageAlt,
   domain,
   liveUrl,
+  openUrl,
   className = "",
+  imageClassName = "",
   priority = false,
 }: BrowserFrameProps) {
   const previewRef = useRef<HTMLDivElement>(null);
@@ -72,9 +76,9 @@ export default function BrowserFrame({
           {domain}
         </div>
 
-        {liveUrl ? (
+        {liveUrl || openUrl ? (
           <a
-            href={liveUrl}
+            href={liveUrl ?? openUrl}
             target="_blank"
             rel="noreferrer"
             aria-label={`Open ${domain} in a new tab`}
@@ -117,7 +121,7 @@ export default function BrowserFrame({
             height={1125}
             priority={priority}
             sizes="(min-width: 1280px) 1200px, 100vw"
-            className="h-auto w-full"
+            className={["h-auto w-full", imageClassName].join(" ")}
           />
         </div>
       ) : (

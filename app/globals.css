@@ -148,6 +148,42 @@ a {
   animation: marquee-right var(--marquee-duration, 60s) linear infinite;
 }
 
+@keyframes cta-auto-sheen {
+  0%,
+  18% {
+    transform: translateX(-170%) skewX(-18deg);
+  }
+
+  55%,
+  100% {
+    transform: translateX(520%) skewX(-18deg);
+  }
+}
+
+@keyframes cta-auto-arrow {
+  0%,
+  70%,
+  100% {
+    transform: translateX(0);
+  }
+
+  78% {
+    transform: translateX(3px);
+  }
+
+  86% {
+    transform: translateX(0);
+  }
+}
+
+.cta-auto-sheen {
+  animation: cta-auto-sheen 3.8s ease-in-out infinite;
+}
+
+.cta-auto-arrow {
+  animation: cta-auto-arrow 3.8s ease-in-out infinite;
+}
+
 .marquee-shell:hover .marquee-track {
   animation-play-state: paused;
 }
@@ -195,4 +231,10 @@ a {
     animation: none;
     transform: none;
   }
+
+  .cta-auto-sheen,
+  .cta-auto-arrow {
+    animation: none;
+  }
+
 }
