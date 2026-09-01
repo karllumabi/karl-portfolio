@@ -28,7 +28,7 @@ export const projects: Project[] = [
     imageFit: "cover",
     imagePosition: "object-top",
 
-    glowColor: "#3B82F6",
+    glowColor: "#4F919E",
 
     coverVariant: "exquisite",
 
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     imageFit: "cover",
     imagePosition: "object-top",
 
-    glowColor: "#C5E384",
+    glowColor: "#A6BE62",
 
     coverVariant: "nexttrip",
 
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     imageFit: "cover",
     imagePosition: "object-top",
 
-    glowColor: "#6866D9",
+    glowColor: "#776CCB",
 
     coverVariant: "engliquest",
 
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     imageFit: "cover",
     imagePosition: "object-center",
 
-    glowColor: "#A79BFF",
+    glowColor: "#78A8C9",
 
     coverVariant: "astral",
 

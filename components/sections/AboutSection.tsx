@@ -9,28 +9,23 @@ import ArrowUpRight from "../ui/ArrowUpRight";
 import ExperienceItem, {
   type Experience,
 } from "../ui/ExperienceItem";
+import HoverBorderGradient from "../ui/HoverBorderGradient";
 import PortraitSwap from "../ui/PortraitSwap";
 
 const resumePath = "/files/Karl-Lumabi-Resume.pdf";
 
 const experiences: Experience[] = [
   {
-    startYear: "2022",
-    endYear: "Now",
-    role: "Graphics Designer",
+    startYear: "Aug 2025",
+    endYear: "Present",
+    role: "UI/UX Designer, Front-End Developer & Graphic Designer",
     company: "Exquisite Properties PH",
   },
   {
-    startYear: "2026",
-    endYear: "Now",
-    role: "UI/UX Designer & Front-end Developer",
-    company: "Exquisite Properties PH",
-  },
-  {
-    startYear: "2023",
-    endYear: "2023",
-    role: "UI/UX Designer",
-    company: "School Project",
+    startYear: "Jan 2026",
+    endYear: "Apr 2026",
+    role: "UI/UX & Graphic Designer Intern",
+    company: "Cloud Ready Technologies Corp.",
   },
 ];
 
@@ -76,52 +71,67 @@ export default function AboutSection() {
                   About
                 </span>
 
-                <div className="flex w-full flex-col items-center py-10 text-center sm:py-14 xl:flex-1 xl:justify-center xl:py-12">
+                <div className="flex w-full max-w-[390px] flex-col items-center py-10 text-center sm:py-14 xl:flex-1 xl:justify-center xl:py-12">
                   <AnimatedHeading
                     lines={[
                       "Hi, I’m Karl Lumabi",
                       "UI/UX & Graphic Designer",
                     ]}
-                    className="max-w-[430px] text-2xl font-normal leading-[1.25] tracking-[-0.025em] text-[var(--text)] sm:text-3xl lg:text-[34px]"
+                    className="max-w-[360px] text-2xl font-normal leading-[1.2] tracking-[-0.035em] text-[var(--text)] sm:text-3xl lg:text-[30px]"
                   />
 
                   <MotionReveal
                     delay={0.15}
                     y={18}
                   >
-                    <p className="mt-8 max-w-[460px] font-mono text-sm leading-[1.9] tracking-wide text-[var(--muted)] sm:text-base">
-                      I create thoughtful digital experiences and
-                      visual identities that balance personality,
-                      usability, and business goals.
+                    <p className="mt-8 max-w-[370px] font-mono text-xs leading-[1.85] tracking-wide text-[var(--muted)] sm:text-sm sm:leading-[1.9]">
+                      UI/UX Designer and Front-End Developer with hands-on
+                      experience designing responsive digital interfaces and
+                      translating them into functional web experiences. I
+                      combine visual design, reusable components, and
+                      thoughtful interaction to create clear, consistent
+                      products.
                     </p>
                   </MotionReveal>
 
                   <MotionReveal
                     delay={0.25}
-                    y={18}
+                    y={12}
                   >
-                    <p className="mt-5 max-w-[460px] font-mono text-sm leading-[1.9] tracking-wide text-[var(--muted)] sm:text-base">
-                      My work spans branding, UI/UX, graphic design,
-                      and front-end development, allowing me to create
-                      consistent experiences from the first idea to
-                      final execution.
-                    </p>
+                    <div
+                      aria-hidden="true"
+                      className="my-9 h-10 w-px bg-[var(--border-strong)] sm:my-10 sm:h-11"
+                    />
                   </MotionReveal>
 
                   <MotionReveal
-                    delay={0.35}
+                    delay={0.3}
+                    y={14}
+                  >
+                    <div className="space-y-1 font-mono text-xs leading-[1.7] tracking-[0.1em] text-[var(--muted-light)] sm:text-sm">
+                      <p>(UI/UX design + front-end development)</p>
+                      <p>(Exquisite Properties PH)</p>
+                      <p>(Figma to production)</p>
+                      <p>(Based in the Philippines)</p>
+                    </div>
+                  </MotionReveal>
+
+                  <MotionReveal
+                    delay={0.4}
                     y={18}
                   >
-                    <Link
+                    <HoverBorderGradient
+                      as={Link}
                       href="/about"
-                      className="group mt-8 inline-flex items-center gap-4 rounded-full border border-[var(--border)] px-5 py-3 text-sm font-medium text-[var(--text)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--button)] hover:bg-[var(--button)] hover:text-[var(--button-text)]"
+                      containerClassName="mt-9 transition-transform duration-300 hover:-translate-y-1"
+                      className="gap-3 bg-[var(--button)] px-4 py-2.5 font-mono text-xs tracking-[0.08em] text-[var(--button-text)]"
                     >
                       More about me
 
                       <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                         <ArrowUpRight className="h-4 w-4" />
                       </span>
-                    </Link>
+                    </HoverBorderGradient>
                   </MotionReveal>
                 </div>
               </article>
@@ -134,12 +144,12 @@ export default function AboutSection() {
               y={0}
               amount={0.12}
             >
-              <article className="flex flex-col items-center rounded-[22px] border border-[var(--border)] bg-[var(--surface)] p-7 text-center sm:rounded-[28px] sm:p-10 xl:min-h-[calc(100svh-4rem)] xl:p-12">
+              <article className="relative flex flex-col items-center overflow-hidden rounded-[22px] border border-[var(--border)] bg-[var(--surface)] p-7 text-center sm:rounded-[28px] sm:p-10 xl:min-h-[calc(100svh-4rem)] xl:p-12">
                 <span className="inline-flex rounded-xl border border-[var(--border)] px-5 py-2.5 font-mono text-xs tracking-[0.16em] text-[var(--muted)] sm:text-sm">
                   Experience
                 </span>
 
-                <div className="flex w-full flex-col items-center py-10 sm:py-14 xl:flex-1 xl:justify-center xl:py-12">
+                <div className="relative flex w-full max-w-[360px] flex-col items-center py-10 sm:py-14 xl:flex-1 xl:justify-center xl:py-12">
                   {experiences.map((experience, index) => (
                     <MotionReveal
                       key={`${experience.role}-${experience.startYear}`}
@@ -162,18 +172,20 @@ export default function AboutSection() {
                   delay={0.2}
                   y={15}
                 >
-                  <a
+                  <HoverBorderGradient
+                    as="a"
                     href={resumePath}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-4 rounded-full bg-[var(--button)] px-7 py-4 text-sm font-medium text-[var(--button-text)] transition-transform duration-300 hover:-translate-y-1"
+                    containerClassName="transition-transform duration-300 hover:-translate-y-1"
+                    className="gap-4 bg-[var(--button)] px-7 py-4 text-sm font-medium text-[var(--button-text)]"
                   >
                     View Resume
 
                     <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                       <ArrowUpRight className="h-4 w-4" />
                     </span>
-                  </a>
+                  </HoverBorderGradient>
                 </MotionReveal>
               </article>
             </MotionReveal>

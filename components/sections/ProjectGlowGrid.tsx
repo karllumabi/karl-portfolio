@@ -63,7 +63,9 @@ export default function ProjectGlowGrid({
       const cardRect =
         card.getBoundingClientRect();
 
-      const glowPadding = 18;
+      // Keep the accent close to the card so it reads as a refined edge,
+      // rather than a large neon halo floating around the grid.
+      const glowPadding = 10;
 
       setGlowPosition({
         x:
@@ -189,7 +191,7 @@ export default function ProjectGlowGrid({
 
   const activeColor =
     projects[activeIndex]?.glowColor ??
-    "#5B72FF";
+    "#8FAFC2";
 
   return (
     <div
@@ -202,26 +204,27 @@ export default function ProjectGlowGrid({
       {/* Soft outer glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-0 z-0 rounded-[42px] transition-[transform,width,height,opacity,background,box-shadow] duration-500 ease-out motion-reduce:transition-none"
+        className="pointer-events-none absolute left-0 top-0 z-0 rounded-[36px] transition-[transform,width,height,opacity,background,box-shadow] duration-500 ease-out motion-reduce:transition-none"
         style={{
           width: `${glowPosition.width}px`,
           height: `${glowPosition.height}px`,
 
-          opacity: isVisible ? 0.62 : 0,
+          opacity: isVisible ? 0.58 : 0,
 
           background: `linear-gradient(
             135deg,
-            ${activeColor}70 0%,
-            ${activeColor}28 48%,
-            ${activeColor}65 100%
+            ${activeColor}4a 0%,
+            transparent 30%,
+            transparent 70%,
+            ${activeColor}30 100%
           )`,
 
           boxShadow: `
-            0 0 28px 8px ${activeColor}50,
-            0 0 55px 12px ${activeColor}28
+            0 0 24px 2px ${activeColor}35,
+            0 0 48px 8px ${activeColor}1c
           `,
 
-          filter: "blur(13px)",
+          filter: "blur(8px)",
 
           transform: `translate3d(
             ${glowPosition.x}px,
@@ -234,14 +237,16 @@ export default function ProjectGlowGrid({
       {/* Cleaner colored edge */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-0 z-[1] rounded-[38px] border transition-[transform,width,height,opacity,border-color] duration-500 ease-out motion-reduce:transition-none"
+        className="pointer-events-none absolute left-0 top-0 z-[1] rounded-[36px] border transition-[transform,width,height,opacity,border-color,box-shadow] duration-500 ease-out motion-reduce:transition-none"
         style={{
           width: `${glowPosition.width}px`,
           height: `${glowPosition.height}px`,
 
-          opacity: isVisible ? 0.65 : 0,
+          opacity: isVisible ? 0.92 : 0,
 
-          borderColor: `${activeColor}85`,
+          borderColor: `${activeColor}9a`,
+
+          boxShadow: `0 0 0 1px ${activeColor}22, 0 0 15px ${activeColor}18`,
 
           transform: `translate3d(
             ${glowPosition.x}px,
